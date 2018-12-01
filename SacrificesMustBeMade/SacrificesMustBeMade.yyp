@@ -894,6 +894,44 @@
             }
         },
         {
+            "Key": "df911209-2b60-4f2a-a64c-dcffe6223139",
+            "Value": {
+                "id": "2d4fa416-2648-4e64-abc5-51a3c3d5512d",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/oPlayer2\/oPlayer2.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "e361c7fe-4e59-4938-9cb7-7ebb52756ac4",
+            "Value": {
+                "id": "8dc270c6-899b-40bd-bbe1-9ebc65c3036f",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\/apply_momentum_without_input\/apply_momentum_without_input.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e52ce36f-2820-4a39-83c3-e04003612156",
             "Value": {
                 "id": "b7f98a0a-48c7-47d8-85b2-af02612fb65c",
@@ -948,6 +986,25 @@
                 ],
                 "resourcePath": "scripts\/wall_cling_with_input\/wall_cling_with_input.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f2e5f440-7f00-43ac-ac0c-0d846dfc51d8",
+            "Value": {
+                "id": "808c4dc6-afe4-40df-b442-63ac6282982f",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sPlayer2\/sPlayer2.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1038,7 +1095,8 @@
         "e66fae20-c229-42a2-95c9-a6b8e36fd2d6",
         "c7e4c80b-483c-4e46-857a-4206f6ca7f45",
         "e52ce36f-2820-4a39-83c3-e04003612156",
-        "93181511-02eb-42ca-b6f6-67b082ee1d80"
+        "93181511-02eb-42ca-b6f6-67b082ee1d80",
+        "e361c7fe-4e59-4938-9cb7-7ebb52756ac4"
     ],
     "tutorial": ""
 }

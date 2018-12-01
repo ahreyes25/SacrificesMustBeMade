@@ -10,7 +10,8 @@
         "e66fae20-c229-42a2-95c9-a6b8e36fd2d6",
         "c7e4c80b-483c-4e46-857a-4206f6ca7f45",
         "e52ce36f-2820-4a39-83c3-e04003612156",
-        "93181511-02eb-42ca-b6f6-67b082ee1d80"
+        "93181511-02eb-42ca-b6f6-67b082ee1d80",
+        "e361c7fe-4e59-4938-9cb7-7ebb52756ac4"
     ],
     "filterType": "GMScript",
     "folderName": "Platforming",

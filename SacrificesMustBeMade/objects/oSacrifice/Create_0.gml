@@ -29,6 +29,18 @@ canClingToWalls = false;
 facing			= 1;
 image_xscale	= facing;
 attachedTo		= noone;
+disabled		= false;
 
 idleState		= sacrificeState.IDLE;
 fallState		= sacrificeState.FALL;
+
+var fix	= physics_fixture_create();
+physics_fixture_set_box_shape(fix, 8, 8);
+physics_fixture_set_density(fix, 1);
+physics_fixture_set_restitution(fix, 0.1);
+physics_fixture_set_linear_damping(fix, 0.1);
+physics_fixture_set_collision_group(fix, -1);
+physics_fixture_set_angular_damping(fix, 0.1);
+physics_fixture_set_friction(fix, 0.2);
+physics_fixture_bind_ext(fix, id, 0, 8)
+physics_fixture_delete(fix);
