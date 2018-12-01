@@ -12,9 +12,7 @@ cx = 0;
 cy = 0;
 
 canClingToWalls = false;
-canStick = false;
-sticking = false;
-
-onGround = on_ground();
-
-takesinput = false;
+canStick		= false;
+sticking		= false;
+onGround		= on_ground();
+takesinput		= false;

@@ -42,3 +42,6 @@ repeat(abs(vx)) {
     else
         vx = 0;
 }
+
+phy_position_x = x;
+phy_position_y = y;	

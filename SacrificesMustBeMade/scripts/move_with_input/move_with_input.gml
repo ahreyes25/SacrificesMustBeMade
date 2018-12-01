@@ -13,7 +13,7 @@ else {
 if (kLeft && !kRight) {
 	// Apply acceleration left
 	if (vx > 0)
-	    vx = approach(vx, 0, tempFric);   
+		vx = approach(vx, 0, tempFric);   
 	vx = approach(vx, -vxMax, tempAccel);
 	
 	if (onGround)
@@ -26,7 +26,7 @@ if (kLeft && !kRight) {
 if (kRight && !kLeft) {
 	// Apply acceleration right
 	if (vx < 0)
-	    vx = approach(vx, 0, tempFric);   
+		vx = approach(vx, 0, tempFric);   
 	vx = approach(vx, vxMax, tempAccel);
 	
 	if (onGround)

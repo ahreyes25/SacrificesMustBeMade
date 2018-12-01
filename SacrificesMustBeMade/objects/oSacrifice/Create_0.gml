@@ -20,7 +20,7 @@ sqrt2 = sqrt(2);
 
 //Player States
 enum sacrificeState {
-	IDLE, FALL
+	IDLE, FALL, CARRY, ALTER
 }
 
 state			= sacrificeState.IDLE;
@@ -29,10 +29,14 @@ canClingToWalls = false;
 facing			= 1;
 image_xscale	= facing;
 attachedTo		= noone;
+lastAttachedTo	= noone;
 disabled		= false;
+onGround		= on_ground();
 
 idleState		= sacrificeState.IDLE;
 fallState		= sacrificeState.FALL;
+alterState		= sacrificeState.ALTER;
+carryState		= sacrificeState.CARRY;
 
 var fix	= physics_fixture_create();
 physics_fixture_set_box_shape(fix, 8, 8);
@@ -44,3 +48,4 @@ physics_fixture_set_angular_damping(fix, 0.1);
 physics_fixture_set_friction(fix, 0.2);
 physics_fixture_bind_ext(fix, id, 0, 8)
 physics_fixture_delete(fix);
+phy_active = true;

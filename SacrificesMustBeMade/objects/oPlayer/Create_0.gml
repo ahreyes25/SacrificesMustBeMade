@@ -10,7 +10,7 @@ airAccel    = 2.50  * m;
 airFric     = 0.70  * m;
 vxMax       = 4.50  * m;
 vyMax       = 8.00  * m;
-jumpHeight  = 8.00  * m;
+jumpHeight  = 9.00  * m;
 gravNorm    = 0.90  * m;
 gravSlide   = 0.15  * m; 
 clingTime   = 10.0  * m;
@@ -23,18 +23,24 @@ sqrt2 = sqrt(2);
 
 //Player States
 enum humanState {
-	IDLE, RUN, JUMP, FALL, WALLSLIDE, 
+	IDLE, RUN, JUMP, FALL, WALLSLIDE, ALTER
 }
 
+
 state			= humanState.IDLE;
-takesinput		= true;
+isComputer		= false;
+takesinput		= !isComputer;
 canClingToWalls	= true;
 facing			= 1;
 carrying		= noone;
+hitStun			= 60;
+inHitStun		= false;
 image_xscale	= facing;
+phy_active		= false;
 
 idleState		= humanState.IDLE;
 runState		= humanState.RUN;
 jumpState		= humanState.JUMP;
 fallState		= humanState.FALL;
 wallSlideState	= humanState.WALLSLIDE;
+alterState		= humanState.ALTER;

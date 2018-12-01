@@ -1,11 +1,11 @@
 if (kJump && cLeft && !onGround) {
 	if (kLeft) {
-	    vy = -jumpHeight * 1.1;
-	    vx =  jumpHeight * .75;
+		vy = -jumpHeight * 1.1;
+		vx =  jumpHeight * .75;
 	}
 	else {
-	    vy = -jumpHeight * 1.1;
-	    vx =  vxMax;
+		vy = -jumpHeight * 1.1;
+		vx =  vxMax;
 	}  
 	facing		= 1;
 	rollCheck	= 0;
@@ -14,12 +14,12 @@ if (kJump && cLeft && !onGround) {
 
 if (kJump && cRight && !onGround) {
 	if (kRight) {
-	    vy = -jumpHeight * 1.1;
-	    vx = -jumpHeight * .75;
+		vy = -jumpHeight * 1.1;
+		vx = -jumpHeight * .75;
 	}
 	else {
-	    vy = -jumpHeight * 1.1;
-	    vx = -vxMax;
+		vy = -jumpHeight * 1.1;
+		vx = -vxMax;
 	}  
 	facing		= -1;
 	rollCheck	= 0;
