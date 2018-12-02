@@ -495,6 +495,25 @@
             }
         },
         {
+            "Key": "64dbb531-b4df-4482-8845-cba299ac7c14",
+            "Value": {
+                "id": "83557ff1-8129-4fbe-a10e-6edbd709f656",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/oSlopeLeftShortUpside\/oSlopeLeftShortUpside.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "664d34a5-daa4-4e7f-a904-ec7609d7b98d",
             "Value": {
                 "id": "813ce614-0fc5-48a3-9a4c-99e76e1eba52",
@@ -720,6 +739,25 @@
                 ],
                 "resourcePath": "views\/7b4e484e-5e5b-4665-9aed-9d71e7d004b2.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "7c12d855-9d24-43f4-a4f7-f3a78ad44747",
+            "Value": {
+                "id": "0e05b12d-385d-457b-b04c-64664b50e9ed",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/oSlopeRightShortUpside\/oSlopeRightShortUpside.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1198,6 +1236,25 @@
             }
         },
         {
+            "Key": "ca860231-d028-4ca3-94a1-3c6c3e688585",
+            "Value": {
+                "id": "f8400b13-4709-4360-a4ca-39bfde5c5991",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sSlopeRightShortUpside\/sSlopeRightShortUpside.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "34d10fab-670c-4e0d-b76d-eab599dda267",
@@ -1214,6 +1271,25 @@
                 ],
                 "resourcePath": "options\/windows\/options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "ce16dab5-c5c9-441f-86d3-db9706627b6a",
+            "Value": {
+                "id": "4417416a-62f9-468a-a391-e67428503371",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sSlopeLeftShortUpside\/sSlopeLeftShortUpside.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

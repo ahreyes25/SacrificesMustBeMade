@@ -66,6 +66,8 @@
 				state = carryState;
 				lockedX = noone;
 				lockedToAltar = false;
+				
+				depth = attachedTo.depth - 1;
 			
 				if (altar != noone) {
 					altar.victim = noone;

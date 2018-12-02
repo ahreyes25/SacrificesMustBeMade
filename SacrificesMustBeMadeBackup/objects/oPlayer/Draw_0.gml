@@ -34,7 +34,7 @@ switch(state) {
 		sprite_index = altarSprite;
 		image_speed = 0;
 		image_index = 0;
-		if (masher != noone) {
+		if (instance_exists(masher) && masher != noone) {
 			draw_sprite_ext(sRotatingBeam, 0, x, y - 24, 0.02 * masher.progress, 0.02 * masher.progress, counter * masher.progress, c_white, 1);
 		}
 		break;
