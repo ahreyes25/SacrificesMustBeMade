@@ -2,7 +2,7 @@
 	if (attachedTo == noone) {
 		phy_active = true;
 	
-		var hit	= collision_rectangle(x - 12, y + 4, x + 12, y - 20, oEntity_par, false, true);
+		var hit	= touching(oEntity_par);
 		if (hit != noone && abs(phy_speed) >= 4 && lastAttachedTo != noone) {
 			if (hit.id != lastAttachedTo.id) {
 		
@@ -11,9 +11,11 @@
 		
 				with (hit) {
 					if (!inHitStun) {
-						inHitStun   = true;
-						phy_active  = true;
-						alarm[1]	= hitStun;
+						inHitStun    = true;
+						phy_active   = true;
+						alarm[1]	 = hitStun;
+						state		 = humanState.HURT;
+						phy_rotation = 0;
 						physics_apply_impulse(x, y, xforce, yforce);
 					}
 				}
@@ -53,7 +55,7 @@
 
 #region Alter
 	if (phy_speed == 0 && attachedTo == noone) {
-		var hit	= collision_rectangle(x - 12, y + 4, x + 12, y - 20, oAlter, false, true);
+		var hit	= touching(oAlter);
 		if (hit != noone) {
 			state = alterState;	
 			
@@ -66,6 +68,8 @@
 			phy_angular_velocity = 0;
 			phy_linear_velocity_x = 0;
 			phy_linear_velocity_y = 0;
+			
+			hit.victim = id;
 		}
 	}
 #endregion

@@ -2,7 +2,7 @@ if (kPickup) {
 	// Pickup Sacrifice
 	if (carrying == noone) {
 		if (place_meeting(x, y, oSacrifice)) {
-			var sac	= collision_rectangle(x - 12, y + 4, x + 12, y - 20, oSacrifice, false, true);
+			var sac	= touching(oSacrifice);
 			
 			if (sac != noone) {
 				sac.attachedTo	= id;

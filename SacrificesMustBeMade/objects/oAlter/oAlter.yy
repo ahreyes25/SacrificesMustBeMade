@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "oAlter",
     "eventList": [
-        
+        {
+            "id": "b4ff6d6d-fa07-4a31-bd84-940653a0678f",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "d623552a-8594-4d5a-aa69-65fd4ca759cb"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

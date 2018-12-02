@@ -23,20 +23,25 @@ sqrt2 = sqrt(2);
 
 //Player States
 enum humanState {
-	IDLE, RUN, JUMP, FALL, WALLSLIDE, ALTER
+	IDLE, RUN, JUMP, FALL, WALLSLIDE, HURT, ALTER, PRAISE, SHAME
 }
-
 
 state			= humanState.IDLE;
 isComputer		= false;
 takesinput		= !isComputer;
 canClingToWalls	= true;
 facing			= 1;
+player			= 1;
 carrying		= noone;
 hitStun			= 60;
 inHitStun		= false;
 image_xscale	= facing;
 phy_active		= false;
+masher			= noone;
+mashing			= false;
+alter			= noone;
+points			= 0;
+phy_fixed_rotation = true;
 
 idleState		= humanState.IDLE;
 runState		= humanState.RUN;

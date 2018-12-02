@@ -32,6 +32,7 @@ if (keyboard_check_pressed(vk_enter)) {
 	window_set_fullscreen(!window_get_fullscreen());
 }
 
+/*
 #region Update Player Properties
 var right = keyboard_check_pressed(vk_right);
 var left  = keyboard_check_pressed(vk_left);
@@ -103,3 +104,4 @@ switch(propIndex) {
 }
 #endregion 
 #endregion
+*/
