@@ -33,7 +33,7 @@ if (keyboard_check_pressed(vk_enter)) {
 }
 
 // Gradually Shift Light Alpha
-var minLight = 0.01;
+var minLight = 0.03;
 var maxLight = 0.1;
 lightAlpha += random_range(-0.001, 0.001);
 lightAlpha = clamp(lightAlpha, minLight, maxLight);

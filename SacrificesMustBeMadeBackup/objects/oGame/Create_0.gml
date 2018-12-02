@@ -27,3 +27,8 @@ p2.runSprite	= asset_get_index("s" + string(p2.name) + "_run");
 p2.jumpSprite	= asset_get_index("s" + string(p2.name) + "_jump");
 p2.hurtSprite	= asset_get_index("s" + string(p2.name) + "_hurt");
 p2.altarSprite	= asset_get_index("s" + string(p2.name) + "_kill");
+
+
+if (!instance_exists(oDragon)) {
+	instance_create_layer(room_width / 2, room_height / 2, "Dragon", oDragon);	
+}
