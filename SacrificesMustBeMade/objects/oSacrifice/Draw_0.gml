@@ -1,12 +1,4 @@
-switch (state) {
-	case sacrificeState.IDLE:
-		break;
-	case sacrificeState.FALL:
-		break;
-	case sacrificeState.ALTER:
-		break;
-}
 draw_self();
 
-
-//draw_text(x, y - 20, state == alterState);
+if (dying) 
+	draw_sprite_ext(sSacrifice_knife, 0, x, y - 4, 1, 1, 0, c_white, image_alpha);	

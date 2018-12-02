@@ -1,10 +1,10 @@
-if (!isComputer && !inHitStun && !mashing)
+if (!isComputer && !inHitStun && !mashing && !finishing)
 	wall_cling_with_input();
 
 apply_gravity_wall_slide();
 apply_gravity();
 
-if (!isComputer && !inHitStun && !mashing) {
+if (!isComputer && !inHitStun && !mashing && !finishing) {
 	move_with_input();
 	wall_jump_with_input();
 	jump_with_input();
@@ -13,16 +13,16 @@ if (!isComputer && !inHitStun && !mashing) {
 // - - - - - - - - - - - - - - - - 
 
 // Pickup Sacrifice
-if (!isComputer && !inHitStun && !mashing) {
+if (!isComputer && !inHitStun && !mashing && !finishing) {
 	pickup_sacrifice_with_input();	
 }
 
-// Sacrifice at alter
-if (!inHitStun && !mashing) {
-	var hit	= touching(oAlter);
+// Sacrifice at altar
+if (!inHitStun && !mashing && !finishing) {
+	var hit	= touching(oAltar);
 	if (hit != noone) {
 		if (kSacrifice && hit.victim != noone) {
-			state = alterState;	
+			state = altarState;	
 			
 			// Create masher
 			if (masher == noone) {
@@ -30,8 +30,8 @@ if (!inHitStun && !mashing) {
 				masher.owner = id;
 				mashing = true;
 				masher.player = player;
-				alter = hit;
-				masher.alter = alter;
+				altar = hit;
+				masher.altar = altar;
 				
 				// Drop anything we're carrying
 				if (carrying != noone) {
@@ -41,11 +41,14 @@ if (!inHitStun && !mashing) {
 			}
 		}
 	}
+	else {
+		altar = noone;	
+	}
 }
 
 // Break out of mashing
 if (mashing) {
-	var hit	= touching(oAlter);
+	var hit	= touching(oAltar);
 	if (hit == noone) {
 		mashing = false;
 		
@@ -56,15 +59,9 @@ if (mashing) {
 	}
 }
 
-
 // Hitstun state
 if (inHitStun) {
 	state = humanState.HURT;	
 }
 
-
-
-
-
-
-
+counter++;

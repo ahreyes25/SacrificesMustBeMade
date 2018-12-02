@@ -186,7 +186,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "sprites\/sAlter\/sAlter.yy",
+                "resourcePath": "sprites\/sAltar\/sAltar.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -647,6 +647,63 @@
             }
         },
         {
+            "Key": "7b4e484e-5e5b-4665-9aed-9d71e7d004b2",
+            "Value": {
+                "id": "ec60d130-24a3-4a3a-b5ed-eb10dcb72cc7",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "views\/7b4e484e-5e5b-4665-9aed-9d71e7d004b2.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "84f65edd-320e-46d1-8f64-04c28fe123e0",
+            "Value": {
+                "id": "57531fe5-8c95-4328-9724-57de9ca95b70",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sSacrifice_knife\/sSacrifice_knife.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "867173cf-96c4-414a-b38a-d86ff2cc9dd5",
+            "Value": {
+                "id": "88d5ea1c-11aa-412a-afc2-ba6ee408153b",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sSacrifice_dead\/sSacrifice_dead.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "877d5cb1-0c57-4413-85b4-f7e3da7b66c6",
             "Value": {
                 "id": "2d29ab9e-f9f9-40ac-a443-096834f096f2",
@@ -1060,7 +1117,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "objects\/oAlter\/oAlter.yy",
+                "resourcePath": "objects\/oAltar\/oAltar.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1119,6 +1176,25 @@
                 ],
                 "resourcePath": "sprites\/sAz1_run\/sAz1_run.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e15493b1-10b9-42f5-adda-d64bcb94f939",
+            "Value": {
+                "id": "da21af79-1c6a-4aae-a23b-61cf0398f0db",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "views\/e15493b1-10b9-42f5-adda-d64bcb94f939.yy",
+                "resourceType": "GMFolder"
             }
         },
         {

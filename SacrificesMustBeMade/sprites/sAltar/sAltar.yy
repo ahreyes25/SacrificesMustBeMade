@@ -2,7 +2,7 @@
     "id": "20ff9d52-e609-4d79-9aae-da3a750fb3fa",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "sAlter",
+    "name": "sAltar",
     "For3D": false,
     "HTile": false,
     "VTile": false,

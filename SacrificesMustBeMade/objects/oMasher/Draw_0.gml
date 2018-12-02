@@ -1,1 +1,1 @@
-draw_text(x, y - 30, progress);
+//draw_text(x, y - 30, progress);

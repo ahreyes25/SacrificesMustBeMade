@@ -23,7 +23,7 @@ sqrt2 = sqrt(2);
 
 //Player States
 enum humanState {
-	IDLE, RUN, JUMP, FALL, WALLSLIDE, HURT, ALTER, PRAISE, SHAME
+	IDLE, RUN, JUMP, FALL, WALLSLIDE, HURT, ALTAR, ALTARFINISH, PRAISE, SHAME
 }
 
 state			= humanState.IDLE;
@@ -39,9 +39,11 @@ image_xscale	= facing;
 phy_active		= false;
 masher			= noone;
 mashing			= false;
-alter			= noone;
+altar			= noone;
 points			= 0;
 name			= "";
+counter			= 0;
+finishing		= false;
 phy_fixed_rotation = true;
 
 idleState		= humanState.IDLE;
@@ -49,4 +51,5 @@ runState		= humanState.RUN;
 jumpState		= humanState.JUMP;
 fallState		= humanState.FALL;
 wallSlideState	= humanState.WALLSLIDE;
-alterState		= humanState.ALTER;
+altarState		= humanState.ALTAR;
+altarFinishState= humanState.ALTARFINISH;

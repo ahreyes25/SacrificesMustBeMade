@@ -20,7 +20,7 @@ sqrt2 = sqrt(2);
 
 //Player States
 enum sacrificeState {
-	IDLE, FALL, CARRY, ALTER
+	IDLE, FALL, CARRY, ALTAR, DEAD
 }
 
 state			= sacrificeState.IDLE;
@@ -33,12 +33,15 @@ image_index		= irandom_range(0, 2);
 attachedTo		= noone;
 lastAttachedTo	= noone;
 disabled		= false;
+altar			= noone;
+dying			= false;
 onGround		= on_ground();
 
 idleState		= sacrificeState.IDLE;
 fallState		= sacrificeState.FALL;
-alterState		= sacrificeState.ALTER;
+altarState		= sacrificeState.ALTAR;
 carryState		= sacrificeState.CARRY;
+deadState		= sacrificeState.DEAD;
 
 var fix	= physics_fixture_create();
 physics_fixture_set_box_shape(fix, 8, 8);
@@ -48,6 +51,6 @@ physics_fixture_set_linear_damping(fix, 0.1);
 physics_fixture_set_collision_group(fix, -1);
 physics_fixture_set_angular_damping(fix, 0.1);
 physics_fixture_set_friction(fix, 0.2);
-physics_fixture_bind_ext(fix, id, 0, 8)
+physics_fixture_bind_ext(fix, id, 0, 1)
 physics_fixture_delete(fix);
 phy_active = true;

@@ -2,7 +2,7 @@
     "id": "d623552a-8594-4d5a-aa69-65fd4ca759cb",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "oAlter",
+    "name": "oAltar",
     "eventList": [
         {
             "id": "b4ff6d6d-fa07-4a31-bd84-940653a0678f",
