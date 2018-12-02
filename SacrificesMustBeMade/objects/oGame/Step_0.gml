@@ -32,6 +32,17 @@ if (keyboard_check_pressed(vk_enter)) {
 	window_set_fullscreen(!window_get_fullscreen());
 }
 
+// Gradually Shift Light Alpha
+var minLight = 0.01;
+var maxLight = 0.1;
+lightAlpha += random_range(-0.001, 0.001);
+lightAlpha = clamp(lightAlpha, minLight, maxLight);
+
+if (lightAlpha > maxLight)
+	lightAlpha = maxLight;
+if (lightAlpha < minLight)
+	lightAlpha = minLight;
+
 /*
 #region Update Player Properties
 var right = keyboard_check_pressed(vk_right);

@@ -32,17 +32,18 @@
 
 #region Carried
 	else {
-		phy_rotation			= 0;
+		//phy_rotation			= 0;
 		phy_linear_velocity_x	= 0;
 		phy_linear_velocity_y	= 0;
 		phy_angular_velocity	= 0;
 		phy_active				= false;
 	
 		if (instance_exists(attachedTo)) {
-			phy_position_x = attachedTo.x;
-			phy_position_y = attachedTo.y - 16;
-			x = attachedTo.x;
-			y = attachedTo.y - 16;
+			x = attachedTo.x + (8 * attachedTo.image_xscale);
+			y = attachedTo.y - 12;
+			phy_position_x = x;
+			phy_position_y = y;
+			//image_xscale = attachedTo.image_xscale;
 			lastAttachedTo = attachedTo;
 			state = carryState;
 		}
@@ -60,11 +61,10 @@
 			state = alterState;	
 			
 			phy_active = false;
-			x = hit.x;
+			//x = hit.x;
 			y = hit.y - 8;
 			phy_position_x = x;
 			phy_position_y = y;
-			phy_rotation = 0;
 			phy_angular_velocity = 0;
 			phy_linear_velocity_x = 0;
 			phy_linear_velocity_y = 0;

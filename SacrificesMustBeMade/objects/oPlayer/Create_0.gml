@@ -41,6 +41,7 @@ masher			= noone;
 mashing			= false;
 alter			= noone;
 points			= 0;
+name			= "";
 phy_fixed_rotation = true;
 
 idleState		= humanState.IDLE;

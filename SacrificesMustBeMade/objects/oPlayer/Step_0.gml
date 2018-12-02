@@ -24,6 +24,7 @@ if (!inHitStun && !mashing) {
 		if (kSacrifice && hit.victim != noone) {
 			state = alterState;	
 			
+			// Create masher
 			if (masher == noone) {
 				masher = instance_create_layer(x, y, "Instances", oMasher);
 				masher.owner = id;
@@ -31,6 +32,12 @@ if (!inHitStun && !mashing) {
 				masher.player = player;
 				alter = hit;
 				masher.alter = alter;
+				
+				// Drop anything we're carrying
+				if (carrying != noone) {
+					carrying.attachedTo = noone;
+					carrying = noone;
+				}
 			}
 		}
 	}

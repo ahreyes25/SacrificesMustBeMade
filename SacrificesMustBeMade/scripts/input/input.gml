@@ -1,5 +1,5 @@
-// Player 2
-if (player == 2) {
+// Player 1
+if (player == 1) {
 	kLeft			= keyboard_check(ord("A"));
 	kRight			= keyboard_check(ord("D"));
 	kUp			    = keyboard_check(ord("W"));
@@ -11,8 +11,8 @@ if (player == 2) {
 	kPickup			= keyboard_check_pressed(ord("K"));
 	kSacrifice		= keyboard_check_pressed(ord("L"));
 }
-// Player 1
-else if (player == 1) {
+// Player 2
+else if (player == 2) {
 	kLeft			= keyboard_check(vk_left);
 	kRight			= keyboard_check(vk_right);
 	kUp			    = keyboard_check(vk_up);

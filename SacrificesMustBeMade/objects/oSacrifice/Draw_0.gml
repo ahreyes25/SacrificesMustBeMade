@@ -9,4 +9,4 @@ switch (state) {
 draw_self();
 
 
-draw_text(x, y - 20, state == alterState);
+//draw_text(x, y - 20, state == alterState);

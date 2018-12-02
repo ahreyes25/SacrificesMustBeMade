@@ -15,6 +15,7 @@ if (progress >= goal) {
 		instance_destroy();
 	}
 	alter.victim = noone;
+	alter.drawLight = true;
 	
 	// Set player state and add points
 	owner.state = humanState.PRAISE;
