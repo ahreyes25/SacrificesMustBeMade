@@ -286,6 +286,25 @@
             }
         },
         {
+            "Key": "3eb1e90b-b8a6-4856-ba6f-a635f8b2e588",
+            "Value": {
+                "id": "9dc4214f-aeff-4953-b427-e628bc10e262",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sDragonHead\/sDragonHead.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4699aba5-297f-4350-b77b-5d56e8a187b6",
             "Value": {
                 "id": "c0013b37-ca5f-4d27-a381-adc5ab575ca3",
@@ -951,6 +970,25 @@
             }
         },
         {
+            "Key": "a4d29d21-897e-4f21-8407-ca1f21e9e575",
+            "Value": {
+                "id": "90d28623-fb02-4621-bf0d-b3ab458bd2c3",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "views\/a4d29d21-897e-4f21-8407-ca1f21e9e575.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "a5a11968-954c-4d74-8f42-347e29702624",
             "Value": {
                 "id": "0b158c96-2f68-4957-808a-927acf486962",
@@ -967,6 +1005,25 @@
                 ],
                 "resourcePath": "views\/a5a11968-954c-4d74-8f42-347e29702624.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "a85a7756-5a4a-4b8c-a506-61857c9bab27",
+            "Value": {
+                "id": "2d2cf5bb-4f34-49e6-b511-cfd6ea39ea2b",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/oDragon\/oDragon.yy",
+                "resourceType": "GMObject"
             }
         },
         {

@@ -1,3 +1,3 @@
 victim = noone;
-lightTime = 30;
+lightTime = 60;
 drawLight = false;
