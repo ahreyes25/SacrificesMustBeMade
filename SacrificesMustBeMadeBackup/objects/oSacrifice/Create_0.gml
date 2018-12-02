@@ -35,6 +35,8 @@ lastAttachedTo	= noone;
 disabled		= false;
 altar			= noone;
 dying			= false;
+lockedToAltar	= false;
+lockedX			= noone;
 onGround		= on_ground();
 
 idleState		= sacrificeState.IDLE;

@@ -61,9 +61,11 @@
 				y = attachedTo.y - 12;
 				phy_position_x = x;
 				phy_position_y = y;
-				//image_xscale = attachedTo.image_xscale;
+	
 				lastAttachedTo = attachedTo;
 				state = carryState;
+				lockedX = noone;
+				lockedToAltar = false;
 			
 				if (altar != noone) {
 					altar.victim = noone;
@@ -81,20 +83,37 @@
 #region Altar
 	if (phy_speed == 0 && attachedTo == noone && !dying) {
 		var hit	= touching(oAltar);
+		
+		// Touching Altar
 		if (hit != noone) {
 			altar = hit;
 			state = altarState;	
 			
+			if (!lockedToAltar) {
+				phy_position_x = x;
+				lockedX = x;
+				lockedToAltar = true;	
+			}
+			
 			phy_active = false;
-			//x = hit.x;
+			x = lockedX;
 			y = hit.y - 8;
 			phy_angular_velocity = 0;
-			//phy_linear_velocity_x = 0;
-			//phy_linear_velocity_y = 0;
 			phy_position_x = x;
 			phy_position_y = y;
 			
 			hit.victim = id;
+		}
+		// Not touching Altar
+		else {
+			lockedToAltar = false
+			lockedX = noone;
+			phy_active = true;
+			
+			if (altar != noone) {
+				altar.victim = noone;
+				altar = noone;
+			}
 		}
 	}
 #endregion

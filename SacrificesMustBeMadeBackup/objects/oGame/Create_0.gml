@@ -1,3 +1,5 @@
+randomize();
+
 propIndex			= 0;
 numberOfProperties	= 10;
 lightAlpha			= 0.5;

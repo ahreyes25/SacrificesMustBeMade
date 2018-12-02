@@ -229,6 +229,25 @@
             }
         },
         {
+            "Key": "2adadde6-b7b3-4a06-a569-0f2fc4d38c0a",
+            "Value": {
+                "id": "5d1f2810-5ace-49ad-9215-3022d0b6ecb0",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/oPrisonGate\/oPrisonGate.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2b21551b-7740-4866-83c7-0596855e224f",
             "Value": {
                 "id": "f06e4df3-2edb-454b-8ec4-6bd4034f1b42",
@@ -780,6 +799,25 @@
             }
         },
         {
+            "Key": "8bda5413-df08-4202-a2de-825300ae5e2b",
+            "Value": {
+                "id": "40ef978f-074d-4e64-9ab6-ffa7dd34b2be",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sAz2_hurt\/sAz2_hurt.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8fcb8d6c-99d7-46d2-9650-af265098ac55",
             "Value": {
                 "id": "0716785e-855d-4557-a76d-99099ef0664b",
@@ -795,6 +833,25 @@
                     "default"
                 ],
                 "resourcePath": "sprites\/sAz2_kill\/sAz2_kill.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "90896724-5176-4c77-ae41-b672b1b7dd48",
+            "Value": {
+                "id": "a3e87a36-4886-4352-b6ce-ec2eee271029",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sPrisonGate\/sPrisonGate.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1555,6 +1612,25 @@
                     "default"
                 ],
                 "resourcePath": "sprites\/sAz1_kill\/sAz1_kill.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ff6f5668-c256-4532-8c53-df6891e150dc",
+            "Value": {
+                "id": "3c209ab3-dbfd-4cbd-994f-3ec264f61e56",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sHeads\/sHeads.yy",
                 "resourceType": "GMSprite"
             }
         }

@@ -45,6 +45,7 @@ name				= "";
 counter				= 0;
 finishing			= false;
 phy_fixed_rotation	= true;
+skulls				= ds_list_create();
 
 idleState			= humanState.IDLE;
 runState			= humanState.RUN;
