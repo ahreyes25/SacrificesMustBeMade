@@ -1,67 +1,40 @@
-if (!isComputer && !inHitStun && !mashing && !finishing)
-	wall_cling_with_input();
+#region Player Controlled With Input
+if (!isComputer) {
+	//check_for_sprites_assigned();
 
-apply_gravity_wall_slide();
-apply_gravity();
+	if (!inHitStun && !mashing && !finishing)
+		wall_cling_with_input();
 
-if (!isComputer && !inHitStun && !mashing && !finishing) {
-	move_with_input();
-	wall_jump_with_input();
-	jump_with_input();
-}
+	apply_gravity_wall_slide();
+	apply_gravity();
 
-// - - - - - - - - - - - - - - - - 
-
-// Pickup Sacrifice
-if (!isComputer && !inHitStun && !mashing && !finishing) {
-	pickup_sacrifice_with_input();	
-}
-
-// Sacrifice at altar
-if (!inHitStun && !mashing && !finishing) {
-	var hit	= touching(oAltar);
-	if (hit != noone) {
-		if (kSacrifice && hit.victim != noone) {
-			state = altarState;	
-			
-			// Create masher
-			if (masher == noone) {
-				masher = instance_create_layer(x, y, "Instances", oMasher);
-				masher.owner = id;
-				mashing = true;
-				masher.player = player;
-				altar = hit;
-				masher.altar = altar;
-				
-				// Drop anything we're carrying
-				if (carrying != noone) {
-					carrying.attachedTo = noone;
-					carrying = noone;
-				}
-			}
-		}
+	if (!inHitStun && !mashing && !finishing) {
+		move_with_input();
+		wall_jump_with_input();
+		jump_with_input();
 	}
-	else {
-		altar = noone;	
+	// - - - - - - - - - - - - - - - - - - - - -
+
+	// Can act
+	if (!inHitStun && !mashing && !finishing) {
+		pickup_sacrifice_with_input();
+		check_for_starting_sacrifice();
+	}
+	// Break out of mashing
+	else if (mashing) {
+		check_for_break_out_mash();
+	}
+	// Hitstun
+	else if (inHitStun) {
+		state = humanState.HURT;	
 	}
 }
+#endregion
 
-// Break out of mashing
-if (mashing) {
-	var hit	= touching(oAltar);
-	if (hit == noone) {
-		mashing = false;
-		
-		with (masher)
-			instance_destroy();
-			
-		masher = noone;
-	}
+#region Computer Controlled
+else {
+	
 }
-
-// Hitstun state
-if (inHitStun) {
-	state = humanState.HURT;	
-}
+#endregion
 
 counter++;
