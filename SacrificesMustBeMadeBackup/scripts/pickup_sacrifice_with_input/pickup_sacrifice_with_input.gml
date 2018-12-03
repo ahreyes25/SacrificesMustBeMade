@@ -1,12 +1,14 @@
 if (kPickup) {
 	// Pickup Sacrifice
 	if (carrying == noone) {
-		if (place_meeting(x, y, oSacrifice)) {
-			var sac	= touching(oSacrifice);
+		if (place_meeting(x, y, oCarry_par)) {
+			var sac	= touching(oCarry_par);
 			
 			if (sac != noone) {
-				sac.attachedTo	= id;
-				carrying		= sac;
+				if (sac.attachedTo == noone) {
+					sac.attachedTo	= id;
+					carrying		= sac;
+				}
 			}
 		}
 	}

@@ -1,0 +1,2 @@
+attachedTo = noone;
+lastAttachedTo = noone;

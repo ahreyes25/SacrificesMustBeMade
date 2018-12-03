@@ -22,6 +22,7 @@
 						if (masher != noone)
 							with (masher) 
 								instance_destroy();
+						masher = noone;
 								
 						// Lose Connection To Sacrifice
 						if (carrying != noone) {
@@ -49,7 +50,7 @@
 
 #region Carried
 	else {
-		if  (!dying) {
+		if (!dying) {
 			//phy_rotation			= 0;
 			phy_linear_velocity_x	= 0;
 			phy_linear_velocity_y	= 0;

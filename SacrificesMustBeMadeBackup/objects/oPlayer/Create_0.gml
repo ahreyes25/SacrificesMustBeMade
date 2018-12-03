@@ -47,6 +47,12 @@ finishing			= false;
 phy_fixed_rotation	= true;
 skulls				= ds_list_create();
 
+// CPU
+target				= noone;
+seeking				= noone;
+mashDown			= false;
+mashSpeed			= 5;
+
 idleState			= humanState.IDLE;
 runState			= humanState.RUN;
 jumpState			= humanState.JUMP;

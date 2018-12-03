@@ -45,3 +45,21 @@ switch(state) {
 		image_index = 1;
 		break;
 }
+
+if (isComputer) {
+	if (target != noone) {
+		if (instance_exists(target)) {
+			draw_line_color(x, y, target.x, target.y, c_red, c_red);
+		}
+	}
+	
+	if (seeking != noone) {
+		if (instance_exists(seeking)) {
+			draw_line_color(x, y, seeking.x, seeking.y, c_green, c_green);
+		}
+	}
+}
+
+if (masher != noone)
+	if (instance_exists(masher))
+		draw_text(x, y - 20, masher);

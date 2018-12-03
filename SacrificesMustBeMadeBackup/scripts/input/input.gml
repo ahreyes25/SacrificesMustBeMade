@@ -23,4 +23,5 @@ else if (player == 2) {
 
 	kPickup			= keyboard_check_pressed(ord("X"));
 	kSacrifice		= keyboard_check_pressed(ord("Z"));
+	kSacrificeUp	= keyboard_check_released(ord("Z"));
 }
