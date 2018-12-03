@@ -12,6 +12,14 @@
 		
 				with (hit) {
 					if (!inHitStun) {
+						
+						if (hit.mashing) {
+							oDragon.speaking = true;
+							oDragon.phrase = get_dragon_phrase("bad");
+							oDragon.mood = "mad";
+							audio_play_sound(choose(sfxDragon1, sfxDragon2, sfxDragon3, sfxDragon4, sfxDragon5), 0, 0);	
+						}
+						
 						inHitStun    = true;
 						phy_active   = true;
 						alarm[1]	 = hitStun;

@@ -1,0 +1,2 @@
+speaking = false;
+mood = "happy";

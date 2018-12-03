@@ -1,3 +1,5 @@
+screen_shake();
+
 // input variables for debug room traversal
 var kRestart, kExit, kPrev, kNext;
 
@@ -6,12 +8,14 @@ kExit    = keyboard_check_pressed(vk_escape);
 kPrev    = keyboard_check_pressed(vk_subtract);
 kNext    = keyboard_check_pressed(vk_add);
 
-if (kRestart)
-    room_restart();
+//if (kRestart)
+//    room_restart();
+
 if (kExit)
     game_end();
     
 // Iterate through rooms backward
+/*
 if (kPrev) {
     if (room == room_first)
         room_goto(room_last);
@@ -26,6 +30,7 @@ if (kNext) {
     else
         room_goto_next();
 }
+*/
 
 // Fullscreen
 if (keyboard_check_pressed(vk_enter)) {

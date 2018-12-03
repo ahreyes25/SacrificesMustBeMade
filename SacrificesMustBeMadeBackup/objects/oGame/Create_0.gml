@@ -3,6 +3,8 @@ randomize();
 propIndex			= 0;
 numberOfProperties	= 10;
 lightAlpha			= 0.5;
+shakeScreen			= false;
+shakeSize			= 4;
 
 // Create Player 1
 p1				= instance_create_layer(50, 150, "Instances", oPlayer);
