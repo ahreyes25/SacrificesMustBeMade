@@ -46,6 +46,10 @@ switch(state) {
 		break;
 }
 
+if (showIcon || inHitStun) {
+	draw_sprite(sPlayer, player - 1, x, y);
+}
+
 /*
 if (isComputer) {
 	if (target != noone) {

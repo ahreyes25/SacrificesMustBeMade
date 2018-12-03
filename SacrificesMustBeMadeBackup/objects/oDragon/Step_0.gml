@@ -26,7 +26,7 @@ if (speaking && alarm[1] == -1) {
 	
 	if (mood == "mad")
 		shake_screen(4, 12);
-	if (mood == "happy")
+	else if (mood == "happy")
 		shake_screen(2, 8);	
 }
 

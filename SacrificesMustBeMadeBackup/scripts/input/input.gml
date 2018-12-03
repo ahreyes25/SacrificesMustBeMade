@@ -15,7 +15,8 @@ if (player == 1) {
 	kPickup			= keyboard_check_pressed(ord("K"))	|| keyboard_check_pressed(ord("C"))		|| gamepad_button_check_pressed(3, gp_face3);
 	kSacrifice		= keyboard_check_pressed(ord("L"))	|| keyboard_check_pressed(ord("Z"))		|| gamepad_button_check_pressed(3, gp_face2)	|| gamepad_button_check_pressed(3, gp_face4);
 	kEnter			= keyboard_check_pressed(vk_enter)	|| gamepad_button_check_pressed(3, gp_start);
-	kExit			= keyboard_check_pressed(vk_escape)	|| gamepad_button_check_pressed(3, gp_select);
+	kExit			= keyboard_check_pressed(vk_escape);
+	kShift			= keyboard_check_pressed(vk_shift)  || gamepad_button_check_pressed(3, gp_select);
 }
 // Player 2
 else if (player == 2) {
@@ -28,7 +29,7 @@ else if (player == 2) {
 	kPickup			= keyboard_check_pressed(ord("I"))		|| gamepad_button_check_pressed(0, gp_face3);
 	kSacrifice		= keyboard_check_pressed(ord("O"))		|| gamepad_button_check_pressed(0, gp_face2)	|| gamepad_button_check_pressed(0, gp_face4);
 	kEnter			= gamepad_button_check_pressed(0, gp_start);
-	kExit			= gamepad_button_check_pressed(0, gp_select);
+	kShift			= gamepad_button_check_pressed(0, gp_select);
 }
 // Player 3
 else if (player == 3) {
@@ -41,7 +42,7 @@ else if (player == 3) {
 	kPickup			= keyboard_check_pressed(ord("N"))		|| gamepad_button_check_pressed(1, gp_face3);
 	kSacrifice		= keyboard_check_pressed(ord("M"))		|| gamepad_button_check_pressed(1, gp_face2)	|| gamepad_button_check_pressed(1, gp_face4);
 	kEnter			= gamepad_button_check_pressed(1, gp_start);
-	kExit			= gamepad_button_check_pressed(1, gp_select);
+	kShift			= gamepad_button_check_pressed(1, gp_select);
 }
 // Player 4
 else if (player == 4) {
@@ -54,5 +55,5 @@ else if (player == 4) {
 	kPickup			= keyboard_check_pressed(vk_numpad5)		|| gamepad_button_check_pressed(2, gp_face3);
 	kSacrifice		= keyboard_check_pressed(vk_numpad6)		|| gamepad_button_check_pressed(2, gp_face2)	|| gamepad_button_check_pressed(2, gp_face4);
 	kEnter			= gamepad_button_check_pressed(2, gp_start);
-	kExit			= gamepad_button_check_pressed(2, gp_select);
+	kShift			= gamepad_button_check_pressed(2, gp_select);
 }

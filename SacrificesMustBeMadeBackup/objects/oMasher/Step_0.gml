@@ -19,12 +19,7 @@ if (progress >= goal) {
 			state = sacrificeState.DEAD;
 			audio_play_sound(sfxBlood, 0, 1);
 			
-			repeat(100) {
-				var b = instance_create_layer(x, y, "Instances", oBlood);
-				with (b) {
-					physics_apply_impulse(x, y, random_range(-1, 1), random_range(-1, 1));	
-				}
-			}
+			blood_particles(100);
 		}
 	}
 	
@@ -53,10 +48,12 @@ if (progress >= goal) {
 		audio_play_sound(choose(sfxDragon1, sfxDragon2, sfxDragon3, sfxDragon4, sfxDragon5), 0, 0);
 	}
 	else {
-		oDragon.speaking = true;
-		oDragon.phrase = get_dragon_phrase("bad");
-		oDragon.mood = "mad";
-		audio_play_sound(choose(sfxDragon1, sfxDragon2, sfxDragon3, sfxDragon4, sfxDragon5), 0, 0);
+		if (!oDragon.speaking) {
+			oDragon.speaking = true;
+			oDragon.phrase = get_dragon_phrase("bad");
+			oDragon.mood = "mad";
+			audio_play_sound(choose(sfxDragon1, sfxDragon2, sfxDragon3, sfxDragon4, sfxDragon5), 0, 0);
+		}
 	}
 	timesPressed = 0;
 		

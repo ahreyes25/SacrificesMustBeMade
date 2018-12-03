@@ -46,6 +46,8 @@ counter				= 0;
 finishing			= false;
 phy_fixed_rotation	= true;
 skulls				= ds_list_create();
+showIconTime		= 90;
+showIcon			= false;
 
 // CPU
 target				= noone;

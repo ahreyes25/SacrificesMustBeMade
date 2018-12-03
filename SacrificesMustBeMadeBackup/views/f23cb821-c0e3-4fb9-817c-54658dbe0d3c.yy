@@ -6,7 +6,10 @@
     "children": [
         "44174067-9831-4d45-aed8-c4643ceb9d1b",
         "50cdde5f-0c4c-4c04-9fc0-90aa6b400391",
-        "e971b5f8-7f23-4b31-beff-94f06463eea2"
+        "e971b5f8-7f23-4b31-beff-94f06463eea2",
+        "6e97f294-0271-4f24-bff6-f867605decca",
+        "764add8f-404e-4e18-a533-e75d914bce1d",
+        "54b96d59-1a3a-4901-8fa2-c93784335306"
     ],
     "filterType": "GMSprite",
     "folderName": "Icons",

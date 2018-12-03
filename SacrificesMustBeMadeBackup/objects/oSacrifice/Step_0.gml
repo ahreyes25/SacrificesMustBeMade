@@ -26,6 +26,7 @@
 						mashing		 = false;
 						finishing	 = false;
 						audio_play_sound(sfxHurt, 0, 0);
+						blood_particles(10);
 						
 						// Destroy Masher
 						if (masher != noone)
