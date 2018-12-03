@@ -22,7 +22,8 @@
         "848fbea5-9ae1-4737-aedd-0911dca179b2",
         "2fa75389-9ebb-41bf-999f-a885972547ca",
         "4b24158e-de8a-43b1-818b-f56ea6b26a53",
-        "ec14a7ce-c6b1-4440-b075-5409ec380e3a"
+        "ec14a7ce-c6b1-4440-b075-5409ec380e3a",
+        "e7c2b8d0-912d-40b3-9f61-cc60728f78f6"
     ],
     "filterType": "GMSound",
     "folderName": "sounds",

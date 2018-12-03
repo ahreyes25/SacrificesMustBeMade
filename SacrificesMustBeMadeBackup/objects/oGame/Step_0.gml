@@ -35,6 +35,11 @@ if (kNext) {
 // Fullscreen
 if (keyboard_check_pressed(vk_enter)) {
 	window_set_fullscreen(!window_get_fullscreen());
+	
+	if (surface_exists(oBloodSurface.bloodMask)) {
+		surface_free(oBloodSurface.bloodMask)
+		oBloodSurface.bloodMask = surface_create(room_width, room_height);
+	}
 }
 
 // Gradually Shift Light Alpha

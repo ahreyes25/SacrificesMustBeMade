@@ -17,6 +17,14 @@ if (progress >= goal) {
 		with (altar.victim) {
 			dying = true;
 			state = sacrificeState.DEAD;
+			audio_play_sound(sfxBlood, 0, 1);
+			
+			repeat(100) {
+				var b = instance_create_layer(x, y, "Instances", oBlood);
+				with (b) {
+					physics_apply_impulse(x, y, random_range(-1, 1), random_range(-1, 1));	
+				}
+			}
 		}
 	}
 	
