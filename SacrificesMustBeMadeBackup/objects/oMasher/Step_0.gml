@@ -1,4 +1,5 @@
-input();
+if (!owner.isComputer)
+	input();
 
 if (kSacrifice && progress < goal) {
 	progress += amountPerPress;

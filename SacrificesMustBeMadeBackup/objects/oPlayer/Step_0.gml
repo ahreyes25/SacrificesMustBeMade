@@ -163,14 +163,16 @@ else {
 					// Start Mashing
 					else {
 						if (alarm[3] == -1) {
-							alarm[3] = mashSpeed;	
+							alarm[3] = irandom_range(mashSpeedMin, mashSpeedMax);
+							
+							if (masher != noone) 
+								if (instance_exists(masher)) 
+									masher.kSacrifice = true;
 						}
-				
-						if (masher != noone) {
-							if (instance_exists(masher)) {
-								masher.kSacrifice = mashDown;
-								masher.kSacrificeUp = !mashDown;
-							}
+						else {
+							if (masher != noone)
+								if (instance_exists(masher))
+									masher.kSacrifice = false;	
 						}
 					}
 				}

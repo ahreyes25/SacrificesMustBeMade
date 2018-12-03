@@ -51,7 +51,8 @@ skulls				= ds_list_create();
 target				= noone;
 seeking				= noone;
 mashDown			= false;
-mashSpeed			= 5;
+mashSpeedMin		= 5;
+mashSpeedMax		= 10;
 
 idleState			= humanState.IDLE;
 runState			= humanState.RUN;

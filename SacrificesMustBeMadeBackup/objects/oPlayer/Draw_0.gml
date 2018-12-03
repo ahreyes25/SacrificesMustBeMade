@@ -59,7 +59,3 @@ if (isComputer) {
 		}
 	}
 }
-
-if (masher != noone)
-	if (instance_exists(masher))
-		draw_text(x, y - 20, masher);
