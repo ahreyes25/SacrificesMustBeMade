@@ -17,6 +17,7 @@
 						alarm[1]	 = hitStun;
 						mashing		 = false;
 						finishing	 = false;
+						audio_play_sound(sfxHurt, 0, 0);
 						
 						// Destroy Masher
 						if (masher != noone)

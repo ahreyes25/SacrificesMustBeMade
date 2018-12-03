@@ -8,6 +8,7 @@ if (kPickup) {
 				if (sac.attachedTo == noone) {
 					sac.attachedTo	= id;
 					carrying		= sac;
+					audio_play_sound(sfxPickup1, 0, 0);
 				}
 			}
 		}
@@ -26,6 +27,7 @@ if (kPickup) {
 		
 		with (carrying) {
 			physics_apply_impulse(x, y, xforce, yforce / 2);
+			audio_play_sound(sfxDoor1, 0, 0);
 		}
 		
 		carrying.attachedTo = noone;

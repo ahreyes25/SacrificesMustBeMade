@@ -1,0 +1,1 @@
+audio_play_sound(choose(sfxDeathScream2, sfxDeathScream3), 0, 0);

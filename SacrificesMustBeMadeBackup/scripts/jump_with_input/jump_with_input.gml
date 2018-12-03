@@ -8,6 +8,7 @@ if (kJump) {
 		        ++y;
 		} else {
 		    vy = -jumpHeight;
+			audio_play_sound(sfxHit2, 0, 0);
 		}
 	}
 }

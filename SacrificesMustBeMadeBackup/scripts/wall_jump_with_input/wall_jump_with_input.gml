@@ -10,6 +10,7 @@ if (kJump && cLeft && !onGround) {
 	facing		= 1;
 	rollCheck	= 0;
 	state		= jumpState;
+	audio_play_sound(sfxHit2, 0, 0);
 }
 
 if (kJump && cRight && !onGround) {
@@ -24,4 +25,5 @@ if (kJump && cRight && !onGround) {
 	facing		= -1;
 	rollCheck	= 0;
 	state		= jumpState;
+	audio_play_sound(sfxHit2, 0, 0);
 } 

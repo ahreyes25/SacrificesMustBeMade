@@ -70,12 +70,18 @@ else {
 		else if (x < target.x) {
 			kRight = true;	
 		}
+		
+		// Fall through platforms
+		if (touching(oPass_par) && target.y > y) {
+			kDown = true;	
+			kJump = true;
+		}
 	}
 		
 	// Vertically Move
 	if (yThresh) {
 		// Jump to target
-		if (y > target.y - 16 && xThresh) {
+		if (y > target.y && xThresh) {
 			kJump = true;	
 		}
 	}
@@ -83,6 +89,13 @@ else {
 	#region Pickup Sacrifice
 	if (touching(oSacrifice) && carrying == noone && !touching(oAltar)) {
 		kPickup = true;
+	}
+	// Drop Crate to pickup sacrifice
+	else if (touching(oSacrifice) && carrying != noone && !touching(oAltar)) {
+		if (carrying.object_index == oCrate) {
+			kUp = true;
+			kPickup = true;
+		}
 	}
 	#endregion
 
@@ -151,6 +164,16 @@ else {
 				kDown = true;
 				kPickup = true;	
 			}
+			else {
+				if (oGame.p1.x > x) {
+					kRight = true;
+					kPickup = true;
+				}
+				else {
+					kLeft = true;
+					kPickup = true;
+				}
+			}
 		}
 		// Start Mashing
 		else {
@@ -175,6 +198,23 @@ else {
 									masher.kSacrifice = false;	
 						}
 					}
+				}
+			}
+			// Mash Until no longer  mashing if sacrifice gets stolen
+			else {
+				if (mashing) {
+					if (alarm[3] == -1) {
+						alarm[3] = irandom_range(mashSpeedMin, mashSpeedMax);
+							
+						if (masher != noone) 
+							if (instance_exists(masher)) 
+								masher.kSacrifice = true;
+					}
+					else {
+						if (masher != noone)
+							if (instance_exists(masher))
+								masher.kSacrifice = false;	
+					}	
 				}
 			}
 		}

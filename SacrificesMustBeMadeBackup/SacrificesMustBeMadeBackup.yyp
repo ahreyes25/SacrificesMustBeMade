@@ -58,6 +58,25 @@
             }
         },
         {
+            "Key": "04db9f71-4774-46c6-b258-363c26a65a02",
+            "Value": {
+                "id": "96687cf5-874e-4ea8-86a6-44ba14ca523e",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxDeathScream1\/sfxDeathScream1.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "05d7819c-1076-41f8-af67-124b4fca3f54",
             "Value": {
                 "id": "3f12ea66-c684-45c9-be85-d88505687ad1",
@@ -210,6 +229,25 @@
             }
         },
         {
+            "Key": "238adcab-eade-42d0-b772-94ba3a69c36e",
+            "Value": {
+                "id": "d205fbca-bdb3-408d-9efd-b7ebedf15d81",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxLight2\/sfxLight2.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "2810ac80-4d48-4efd-82dd-c83d3b3f7afd",
             "Value": {
                 "id": "a539540e-affb-47df-8606-f5a1791d7b86",
@@ -286,6 +324,82 @@
             }
         },
         {
+            "Key": "2c11ee97-e724-47c8-a1e9-e2858c546d75",
+            "Value": {
+                "id": "1ddd1320-171f-490d-8b74-4704184848df",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxDoor1\/sfxDoor1.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "2d4d626e-ee1a-4617-bd0b-3a551ea6e765",
+            "Value": {
+                "id": "fdf29add-7368-43eb-8091-671ac1a6773c",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxHit\/sfxHit.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "2f93af7c-cf62-4a27-a037-fd3e976899b6",
+            "Value": {
+                "id": "902485d4-0c18-43db-957c-bc2166aa34da",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxPortal2\/sfxPortal2.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "2fa75389-9ebb-41bf-999f-a885972547ca",
+            "Value": {
+                "id": "538066b2-a77c-4ce7-ab69-630c6d6bebc4",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxLight1\/sfxLight1.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "344c4f47-410a-4264-a53c-49a801baa9e3",
             "Value": {
                 "id": "25c4effa-1732-4cc0-8ae1-9a14a929d58d",
@@ -302,6 +416,63 @@
                 ],
                 "resourcePath": "views\/344c4f47-410a-4264-a53c-49a801baa9e3.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "369c191b-9e99-4abb-8033-fb0716f6eee2",
+            "Value": {
+                "id": "9c6d98df-4a51-4442-9ac7-985914ba7d49",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfx_movement_dooropen2\/sfx_movement_dooropen2.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "3b18cb10-e226-4c23-a938-86802a1432e6",
+            "Value": {
+                "id": "7745a0a1-bab3-473d-9d91-bfcb7a051f3f",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxDragon4\/sfxDragon4.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "3bf0330c-4a8b-4166-bc87-8ea479ddb3a7",
+            "Value": {
+                "id": "33904d03-d29a-4085-8b9c-fcf8872fe035",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxSacrificeTalk1\/sfxSacrificeTalk1.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -340,6 +511,25 @@
                 ],
                 "resourcePath": "objects\/oCarry_par\/oCarry_par.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "44ef6fa5-f9ba-49b7-9763-dc9f88a88e56",
+            "Value": {
+                "id": "6568a693-c39f-4ace-811f-9771dcfb2b2d",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxDeathScream2\/sfxDeathScream2.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -416,6 +606,25 @@
                 ],
                 "resourcePath": "rooms\/rmTest\/rmTest.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "4b24158e-de8a-43b1-818b-f56ea6b26a53",
+            "Value": {
+                "id": "313ea4d0-fa6e-4d2e-bd26-38639855f480",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxHit2\/sfxHit2.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -511,6 +720,82 @@
                 ],
                 "resourcePath": "views\/570356f8-eb13-4453-84ab-1d1a09acf3e3.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "59b4d4a0-f981-48f0-befd-827923494a6e",
+            "Value": {
+                "id": "91f6d157-b8de-47e7-90c0-bdca679fd1fb",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxHurt\/sfxHurt.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "5a66f608-178e-4ac5-a50f-ff0d3d1f0247",
+            "Value": {
+                "id": "95b56b1e-bb4f-4889-84b2-dd565b1da351",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxDragon5\/sfxDragon5.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "5ad0720a-4bfd-4b4c-aca8-2a38ca585774",
+            "Value": {
+                "id": "0f475973-5014-47fd-ae9d-bf67542dd9b4",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxDragon1\/sfxDragon1.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "5dac9958-6938-4c2f-8914-ca7a50af7b64",
+            "Value": {
+                "id": "2192c9cd-1e55-4ccc-a42f-c9655a64b9c5",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxDeathScream3\/sfxDeathScream3.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -761,6 +1046,25 @@
             }
         },
         {
+            "Key": "749dfd20-4165-4a12-aaa6-44349315666c",
+            "Value": {
+                "id": "b72dd391-ec10-4be7-87c7-39a31ddace11",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxSacrificeTalk2\/sfxSacrificeTalk2.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "78b6b607-3e61-4aa2-b58f-d56f1e19ce14",
             "Value": {
                 "id": "d3e4d8cd-fd31-45c5-b2f8-32ac8a39a962",
@@ -777,6 +1081,25 @@
                 ],
                 "resourcePath": "views\/78b6b607-3e61-4aa2-b58f-d56f1e19ce14.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "7b426157-e4d4-46b5-ba14-63d47726e048",
+            "Value": {
+                "id": "e528a35e-19c3-47f3-a9cd-c6a57fe341d7",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxPortal3\/sfxPortal3.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -834,6 +1157,25 @@
                 ],
                 "resourcePath": "sprites\/sAz2_run\/sAz2_run.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "848fbea5-9ae1-4737-aedd-0911dca179b2",
+            "Value": {
+                "id": "54e2eec6-e6d8-4d57-b090-769e6ab2284e",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxCoin\/sfxCoin.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -986,6 +1328,25 @@
                 ],
                 "resourcePath": "tilesets\/tTileSet\/tTileSet.yy",
                 "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "9b07702d-31d7-44be-a0d5-713d3adeb004",
+            "Value": {
+                "id": "a6399a87-1dc2-4d4a-a08b-3c717727c19e",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxDoor2\/sfxDoor2.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -1217,6 +1578,25 @@
             }
         },
         {
+            "Key": "bbcf68d2-b71b-48a7-9551-1fa61fe2acbb",
+            "Value": {
+                "id": "ac7fefd3-45cb-4736-a804-4b1305a3052c",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxLight3\/sfxLight3.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "bcfa1e15-7978-4363-8215-0db4b157a7dd",
             "Value": {
                 "id": "636f61d7-c3cf-490b-8f93-6a9693a34ab1",
@@ -1233,6 +1613,25 @@
                 ],
                 "resourcePath": "scripts\/input\/input.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c0196d82-cb89-4ddc-8282-5cc4327f70ab",
+            "Value": {
+                "id": "99c0c748-451a-4a05-a130-f97c015f69a8",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxPortal1\/sfxPortal1.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -1423,6 +1822,25 @@
                 ],
                 "resourcePath": "views\/d22185b1-ee7b-40d6-b39d-4f582c41a471.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "d245d22e-7588-4572-a206-4dc36e3605aa",
+            "Value": {
+                "id": "64398dd4-290b-4f12-9e0f-711bcc76be84",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxDragon3\/sfxDragon3.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -1635,6 +2053,25 @@
             }
         },
         {
+            "Key": "ec14a7ce-c6b1-4440-b075-5409ec380e3a",
+            "Value": {
+                "id": "82f64679-e150-4448-ae60-0e17c200613b",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxPickup1\/sfxPickup1.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "ed029624-20ba-4ca7-ba81-4895e4f6b66e",
             "Value": {
                 "id": "41ee7814-2c08-4a32-9d89-005f3426b8d7",
@@ -1670,6 +2107,25 @@
                 ],
                 "resourcePath": "scripts\/wall_cling_with_input\/wall_cling_with_input.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "ef203d2f-2296-4034-b4f2-7fe56a2f8e90",
+            "Value": {
+                "id": "f7a86cee-aa21-49ed-b16b-612b8ecfd146",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxJump1\/sfxJump1.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -1746,6 +2202,44 @@
                 ],
                 "resourcePath": "sprites\/sAz_mask\/sAz_mask.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f75cb2c3-89f2-470f-ba66-d1ee5d278cd1",
+            "Value": {
+                "id": "b272d843-90cf-4654-a905-a4e319c1a1d3",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxDragon2\/sfxDragon2.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "fad35e22-8dc1-4bfd-90e8-2ece0e2a0642",
+            "Value": {
+                "id": "fb41c78f-484e-4680-ac99-bd4b1d592157",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sfxPickup2\/sfxPickup2.yy",
+                "resourceType": "GMSound"
             }
         },
         {

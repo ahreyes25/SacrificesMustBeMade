@@ -46,6 +46,7 @@ switch(state) {
 		break;
 }
 
+/*
 if (isComputer) {
 	if (target != noone) {
 		if (instance_exists(target)) {
@@ -59,3 +60,4 @@ if (isComputer) {
 		}
 	}
 }
+*/
