@@ -73,5 +73,7 @@ if (lightAlpha < minLight)
 	lightAlpha = minLight;
 	
 	
-if (kEnter1 || kEnter2 || kEnter3 || kEnter4)
+if (kEnter1 || kEnter2 || kEnter3 || kEnter4) {
 	room_goto_next();	
+	//audio_play_sound(sfxCoin, 0, 0);
+}

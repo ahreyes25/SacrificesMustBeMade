@@ -951,6 +951,25 @@
             }
         },
         {
+            "Key": "5bf29482-14f8-442a-9002-71b42eff711e",
+            "Value": {
+                "id": "ae1929f6-667d-4674-9c8d-21f7ecb71685",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sAz4_jump\/sAz4_jump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5dac9958-6938-4c2f-8914-ca7a50af7b64",
             "Value": {
                 "id": "2192c9cd-1e55-4ccc-a42f-c9655a64b9c5",
@@ -1673,6 +1692,44 @@
             }
         },
         {
+            "Key": "9e1fa0cf-116a-409a-bc23-2ba3ea7ccf6d",
+            "Value": {
+                "id": "5adefb61-c120-46d1-aafe-e197d613abe3",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sArrow\/sArrow.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9fc353ee-8dad-4ddd-8521-a207e679cc1e",
+            "Value": {
+                "id": "fd7a8bd8-c176-48a2-992a-2920ee896af0",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sAz4_hurt\/sAz4_hurt.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a47c7932-dc36-4bd1-9c27-42a417dd721b",
             "Value": {
                 "id": "aa68cac2-5ba3-4b08-8d52-2b14642cd4b7",
@@ -2319,6 +2376,25 @@
             }
         },
         {
+            "Key": "d79a7261-a51e-4931-b801-545765689add",
+            "Value": {
+                "id": "75b61176-b70a-47cd-a59b-1bc635651894",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sAz4_run\/sAz4_run.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "da453389-4516-4775-a63e-25f023b45140",
             "Value": {
                 "id": "07dbaaf8-fd90-4f3e-ac4d-7f8006b06c26",
@@ -2566,6 +2642,25 @@
             }
         },
         {
+            "Key": "f12bdfd5-3fea-42e2-8779-592a248b699c",
+            "Value": {
+                "id": "6dda9382-7fac-4db4-955f-e7aa396dfdcb",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sAz4_kill\/sAz4_kill.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f1976ab0-316a-4322-a65f-f938ba59314c",
             "Value": {
                 "id": "4828b049-6a45-4985-8485-5b8f44b255a1",
@@ -2714,6 +2809,25 @@
                     "default"
                 ],
                 "resourcePath": "sprites\/sSlopeLeftShort\/sSlopeLeftShort.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fbec383a-7749-4178-8180-0bce2ad52571",
+            "Value": {
+                "id": "44b6f514-5779-4fb9-8321-dab1b26fe98d",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sAz4_idle\/sAz4_idle.yy",
                 "resourceType": "GMSprite"
             }
         },

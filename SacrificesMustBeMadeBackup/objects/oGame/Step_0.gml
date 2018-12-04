@@ -57,6 +57,7 @@ kFull = kShift1 || kShift2 || kShift3 || kShift4;
 
 if (kExit1) {
     room_goto(rmMenu);	
+	audio_stop_sound(sfxBlood);
 	
 	with (oCharacterSelect)
 		instance_destroy();

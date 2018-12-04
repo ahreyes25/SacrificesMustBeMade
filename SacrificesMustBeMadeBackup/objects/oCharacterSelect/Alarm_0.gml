@@ -1,2 +1,1 @@
-if (numberReady == numberOfPlayers)
-	room_goto_next();
+room_goto_next();
