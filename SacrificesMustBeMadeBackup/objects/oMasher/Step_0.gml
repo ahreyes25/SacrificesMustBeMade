@@ -28,6 +28,10 @@ if (progress >= goal) {
 		altar.drawLight = true;
 		owner.points += 1000;
 		owner.points += timesPressed;
+		owner.justScored = true;
+		if (owner.alarm[6] == -1) {
+			owner.alarm[6] = 90;	
+		}
 		
 		// Add skull to player
 		if (ds_exists(owner.skulls, ds_type_list) && altar.victim != noone) 

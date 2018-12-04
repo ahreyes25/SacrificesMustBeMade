@@ -50,6 +50,32 @@ if (showIcon || inHitStun) {
 	draw_sprite(sPlayer, player - 1, x, y);
 }
 
+var red = make_color_rgb(204, 55, 77);
+var yel = make_color_rgb(230, 145, 70);
+var gre = make_color_rgb(73, 143, 96);
+var bro = make_color_rgb(250, 220, 200);
+var lineW = 1;
+
+if (justScored) {
+	switch (player) {
+		case 1:
+			draw_line_width_color(x, y - 8, 0, 0, lineW, red, red);
+			break;
+			
+		case 2:
+			draw_line_width_color(x, y - 8, room_width, 0, lineW, yel, yel);
+			break;
+		
+		case 3:
+			draw_line_width_color(x, y - 8, 0, room_height, lineW, gre, gre);
+			break;
+		
+		case 4:
+			draw_line_width_color(x, y - 8, room_width, room_height, lineW, bro, bro);
+			break;
+	}
+}
+
 /*
 if (isComputer) {
 	if (target != noone) {

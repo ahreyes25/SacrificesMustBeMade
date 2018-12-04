@@ -55,6 +55,8 @@ seeking				= noone;
 mashDown			= false;
 mashSpeedMin		= 5;
 mashSpeedMax		= 10;
+canPickupCrate		= true;
+justScored			= false;
 
 idleState			= humanState.IDLE;
 runState			= humanState.RUN;

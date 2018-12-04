@@ -122,9 +122,14 @@ else {
 
 	#region Pickup Crate
 	// Pickup Crate
-	if (touching(oCrate) && !touching(oSacrifice) && carrying == noone) {
-		kPickup = true;	
-	}
+	var c = touching(oCrate);
+		if (c != noone) {
+		if (c.phy_speed == 0 && !touching(oSacrifice) && carrying == noone) {
+			if (canPickupCrate) {
+				kPickup = true;	
+			}
+		}
+		}
 	#endregion
 
 	#region Carrying Sacrifice 
@@ -142,36 +147,44 @@ else {
 		if (carrying.object_index = oCrate.object_index) {
 			var hit;
 			
+			var nearPlayer = instance_nearest(oAltar.x, oAltar.y, oPlayer);
+			
 			// Look Right & Left
-			hit = collision_line(x, y, oGame.p1.x, y, oPlayer, false, true);
+			hit = collision_line(x, y, nearPlayer.x, y, oPlayer, false, true);
 			if (hit != noone) {
-				if (hit.object_index == oPlayer) {
-					// Throw Right
-					if (hit.x > x) {
-						kRight = true;
-						kPickup = true;
-					}
-					else {
-						kLeft = true;
-						kPickup = true;
-					}
+				// Throw Right
+				if (hit.x > x) {
+					kRight = true;
+					kPickup = true;
+				}
+				else {
+					kLeft = true;
+					kPickup = true;
+				}
+				
+				if (alarm[5] == -1) {
+					alarm[5] = 30; // crate pickup cooldown
+					canPickupCrate = false;
 				}
 			}
 			// Look Up & Down
 			else {
-				hit = collision_line(x, y, x, oGame.p1.y, oPlayer, false, true);
+				hit = collision_line(x, y, x, nearPlayer.y, oPlayer, false, true);
 				if (hit != noone) {
-					if (hit.object_index == oPlayer) {
-						// Throw Down
-						if (hit.y > y) {
-							kDown = true;
-							kPickup = true;
-						}
-						else {
-							kUp = true;
-							kPickup = true;
-						}
+					// Throw Down
+					if (hit.y > y) {
+						kDown = true;
+						kPickup = true;
 					}
+					else {
+						kUp = true;
+						kPickup = true;
+					}
+				}
+				
+				if (alarm[5] == -1) {
+					alarm[5] = 30; // crate pickup cooldown
+					canPickupCrate = false;
 				}
 			}
 			

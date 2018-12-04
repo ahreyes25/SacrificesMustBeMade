@@ -26,7 +26,7 @@ if (kPickup) {
 			var yforce = 0;
 		
 		with (carrying) {
-			physics_apply_impulse(x, y, xforce, yforce / 2);
+			physics_apply_impulse(x, y, xforce, yforce * 0.75);
 			audio_play_sound(sfxDoor1, 0, 0);
 		}
 		

@@ -1,6 +1,6 @@
 var hit	= touching(oAltar);
 if (hit != noone) {
-	if (kSacrifice && hit.victim != noone) {
+	if (kSacrifice && hit.victim != noone && onGround) {
 		state = altarState;	
 			
 		// Create masher
