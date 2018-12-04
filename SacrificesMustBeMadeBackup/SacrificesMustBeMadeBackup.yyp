@@ -2167,6 +2167,25 @@
             }
         },
         {
+            "Key": "bb9cf4e1-f3b1-4901-a943-13870678c662",
+            "Value": {
+                "id": "0ba3bc07-ac9d-481e-81d1-4d2ff0b1d1c6",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/oInstructions\/oInstructions.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "bbb09253-8991-4c1a-ba9b-0020311ff4f3",
             "Value": {
                 "id": "0bf0268b-89d4-4526-aa30-d169f9bc940c",
@@ -2851,6 +2870,25 @@
             }
         },
         {
+            "Key": "ec7e5bf5-dbd9-4aff-9580-5349cfe8615c",
+            "Value": {
+                "id": "b4d45e54-6498-4bdf-9f56-e2bfc900c07d",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sInstructions\/sInstructions.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ed029624-20ba-4ca7-ba81-4895e4f6b66e",
             "Value": {
                 "id": "41ee7814-2c08-4a32-9d89-005f3426b8d7",
@@ -3057,6 +3095,25 @@
                 ],
                 "resourcePath": "scripts\/get_dragon_phrase\/get_dragon_phrase.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "fac08e11-cd65-4f31-a58b-965937c7e415",
+            "Value": {
+                "id": "d95c4ca6-5008-4788-9fd3-8e53d963a7f3",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "rooms\/rmInstructions\/rmInstructions.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
