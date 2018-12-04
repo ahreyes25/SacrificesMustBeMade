@@ -206,7 +206,7 @@ if (!oGame.paused) {
 					kDown = true;
 					kPickup = true;	
 				}
-				else {
+				else if (carrying.object_index == oCrate) {
 					var nearestP = instance_nearest(x, y, oPlayer);
 					if (nearestP.x > x) {
 						kRight = true;

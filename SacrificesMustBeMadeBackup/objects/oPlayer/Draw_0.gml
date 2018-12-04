@@ -61,19 +61,19 @@ var lineW = 1;
 if (justScored) {
 	switch (player) {
 		case 1:
-			draw_line_width_color(x, y - 8, 0, 0, lineW, red, red);
+			draw_line_width_color(x, y - 8, x - view_wport[0] / 2, y - view_hport[0] / 2, lineW, red, red);
 			break;
 			
 		case 2:
-			draw_line_width_color(x, y - 8, room_width, 0, lineW, yel, yel);
+			draw_line_width_color(x, y - 8, x + view_wport[0] / 2, y - view_wport[0] / 2, lineW, yel, yel);
 			break;
 		
 		case 3:
-			draw_line_width_color(x, y - 8, 0, room_height, lineW, gre, gre);
+			draw_line_width_color(x, y - 8, x - view_wport[0] / 2, y + view_hport[0] / 2, lineW, gre, gre);
 			break;
 		
 		case 4:
-			draw_line_width_color(x, y - 8, room_width, room_height, lineW, bro, bro);
+			draw_line_width_color(x, y - 8, x + view_wport[0] / 2, y + view_hport[0] / 2, lineW, bro, bro);
 			break;
 	}
 }

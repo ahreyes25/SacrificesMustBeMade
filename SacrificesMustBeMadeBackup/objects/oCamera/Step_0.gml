@@ -29,9 +29,8 @@ if (target.object_index == oPlayer)
 	projmat = matrix_build_projection_ortho(160, 120, 1.0, 32000.0);
 else {
 	var furth = instance_furthest(oCenterOfMass.x, oCenterOfMass.y, oPlayer);
-	var zoom = point_distance(oCenterOfMass.x, oCenterOfMass.y, furth.x, furth.y) / (room_width) * 2.5;
-	zoom = clamp(zoom, 0.8, 1.4);
-	show_debug_message(zoom);
-	projmat = matrix_build_projection_ortho(320 * zoom, 240 * zoom, 1.0, 32000.0);
+	var zoom = point_distance(oCenterOfMass.x, oCenterOfMass.y, furth.x, furth.y) / (room_width) * 3.5;
+	zoom = clamp(zoom, 0.8, 2.0);
+	projmat = matrix_build_projection_ortho(640 * zoom, 480 * zoom, 1.0, 32000.0);
 }
 camera_set_proj_mat(cam, projmat);

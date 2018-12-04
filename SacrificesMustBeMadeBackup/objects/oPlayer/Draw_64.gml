@@ -37,9 +37,9 @@ switch (player) {
 		break;
 	
 	case 2:
-		var frameX = room_width * 2 - 25;
+		var frameX = view_wport[0] - 25;
 		var frameY = 25;
-		draw_sprite_ext(sFrame, 0, frameX, frameY, scale, scale, 0, yel, 1);;
+		draw_sprite_ext(sFrame, 0, frameX, frameY, scale, scale, 0, yel, 1);
 		draw_sprite_ext(asset_get_index("s" + string(name) + "Head"), 0, frameX, frameY, scale * -1, scale, 0, c_white, 1);
 		
 		if (ds_exists(skulls, ds_type_list)) {
@@ -50,9 +50,9 @@ switch (player) {
 			
 				draw_sprite_ext(
 					sHeads, ds_list_find_value(skulls, i), 
-					(room_width * 2) - (xOff + (25 * 2) + (((sprWidth * sprScale) + sprSpacing) * (i mod numPerColumn)) + 8), 
+					(view_wport[0]) - (xOff + (25 * 2) + (((sprWidth * sprScale) + sprSpacing) * (i mod numPerColumn)) + 8), 
 					yOff + (((sprHeight * sprScale) + sprSpacing) * xColumn) - (25 / 2) - 2, 
-					sprScale, sprScale, 0, c_white, 1
+					sprScale * -1, sprScale, 0, c_white, 1
 				);
 			}
 		}
@@ -60,7 +60,7 @@ switch (player) {
 	
 	case 3:	
 		var frameX = 25;
-		var frameY = room_height * 2 - 25;
+		var frameY = view_hport[0] - 25;
 		draw_sprite_ext(sFrame, 0, frameX, frameY, scale, scale, 0, gre, 1);
 		draw_sprite_ext(asset_get_index("s" + string(name) + "Head"), 0, frameX, frameY, scale, scale, 0, c_white, 1);
 		
@@ -73,7 +73,7 @@ switch (player) {
 				draw_sprite_ext(
 					sHeads, ds_list_find_value(skulls, i), 
 					xOff + (25 * 2) + (((sprWidth * sprScale) + sprSpacing) * (i mod numPerColumn)) + 8, 
-					(room_height * 2) - (yOff + (((sprHeight * sprScale) + sprSpacing) * xColumn) - (25 / 2) - 2), 
+					(view_hport[0]) - (yOff + (((sprHeight * sprScale) + sprSpacing) * xColumn) - (25 / 2) - 2), 
 					sprScale, sprScale, 0, c_white, 1
 				);
 			}
@@ -81,8 +81,8 @@ switch (player) {
 		break;
 		
 	case 4:
-		var frameX = room_width * 2 - 25;
-		var frameY = room_height * 2 - 25;
+		var frameX = view_wport[0] - 25;
+		var frameY = view_hport[0] - 25;
 		draw_sprite_ext(sFrame, 0, frameX, frameY, scale, scale, 0, bro, 1);
 		draw_sprite_ext(asset_get_index("s" + string(name) + "Head"), 0, frameX, frameY, scale * -1, scale, 0, c_white, 1);
 		
@@ -94,9 +94,9 @@ switch (player) {
 			
 				draw_sprite_ext(
 					sHeads, ds_list_find_value(skulls, i), 
-					(room_width * 2) - (xOff + (25 * 2) + (((sprWidth * sprScale) + sprSpacing) * (i mod numPerColumn)) + 8), 
-					(room_height * 2) - (yOff + (((sprHeight * sprScale) + sprSpacing) * xColumn) - (25 / 2) - 2), 
-					sprScale, sprScale, 0, c_white, 1
+					(view_wport[0]) - (xOff + (25 * 2) + (((sprWidth * sprScale) + sprSpacing) * (i mod numPerColumn)) + 8), 
+					(view_hport[0]) - (yOff + (((sprHeight * sprScale) + sprSpacing) * xColumn) - (25 / 2) - 2), 
+					sprScale * -1, sprScale, 0, c_white, 1
 				);
 			}
 		}

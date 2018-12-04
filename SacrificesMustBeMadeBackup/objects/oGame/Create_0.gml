@@ -16,7 +16,7 @@ numberOfSkullsToWin	= 5;
 
 if (oCharacterSelect.p1in != in.OFF) {
 	// Create Player 1
-	p1				= instance_create_layer(50, 150, "Instances", oPlayer);
+	p1				= instance_create_layer(440, 620, "Instances", oPlayer);
 	p1.isComputer	= oCharacterSelect.p1comp;
 	p1.takesInput	= !p1.isComputer;
 	p1.player		= 1;
@@ -33,7 +33,7 @@ if (oCharacterSelect.p1in != in.OFF) {
 
 if (oCharacterSelect.p2in != in.OFF) {
 	// Create Player 2
-	p2				= instance_create_layer(200, 100, "Instances", oPlayer);
+	p2				= instance_create_layer(480, 620, "Instances", oPlayer);
 	p2.isComputer	= oCharacterSelect.p2comp;
 	p2.takesInput	= !p2.isComputer;
 	p2.player		= 2;
@@ -50,7 +50,7 @@ if (oCharacterSelect.p2in != in.OFF) {
 
 if (oCharacterSelect.p3in != in.OFF) {
 	// Create Player 3
-	p3				= instance_create_layer(100, 100, "Instances", oPlayer);
+	p3				= instance_create_layer(520, 620, "Instances", oPlayer);
 	p3.isComputer	= oCharacterSelect.p3comp;
 	p3.takesInput	= !p3.isComputer;
 	p3.player		= 3;
@@ -67,7 +67,7 @@ if (oCharacterSelect.p3in != in.OFF) {
 
 if (oCharacterSelect.p4in != in.OFF) {
 	// Create Player 4
-	p4				= instance_create_layer(250, 50, "Instances", oPlayer);
+	p4				= instance_create_layer(560, 620, "Instances", oPlayer);
 	p4.isComputer	= oCharacterSelect.p4comp;
 	p4.takesInput	= !p4.isComputer;
 	p4.player		= 4;
