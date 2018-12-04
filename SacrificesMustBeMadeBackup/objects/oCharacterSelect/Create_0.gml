@@ -42,3 +42,6 @@ imSpeedIdle = 0;
 
 characterIndex = 2;
 drawArrow = false;
+
+counter = 0;
+counter2 = 0;

@@ -61,6 +61,17 @@ if (kExit1) {
 	
 	with (oCharacterSelect)
 		instance_destroy();
+		
+	with (oBloodSurface)
+		instance_destroy();
+		
+	with (oCamera)
+		instance_destroy();
+		
+	with (oCenterOfMass)
+		instance_destroy();
+		
+	instance_destroy();
 }
 
 // Fullscreen
@@ -78,3 +89,33 @@ if (lightAlpha > maxLight)
 	lightAlpha = maxLight;
 if (lightAlpha < minLight)
 	lightAlpha = minLight;
+	
+// Pause
+if (!countdown)
+	if (kEnter1 || kEnter2 || kEnter3 || kEnter4)
+		paused = !paused;
+		
+if (alarm[1] >= 0) {
+	if (alarm[1] != 0) {
+		if (alarm[1] mod 30 == 0) {
+			audio_play_sound(sfxBlipLow, 0, 0);	
+		}
+	}
+	else 
+		audio_play_sound(sfxBlipHi, 0, 0);
+}	
+
+// End Game
+if (gameWon && !endingGame) {
+	endingGame = true;
+	if (alarm[2] == -1) {
+		alarm[2] = 300;	
+	}
+	
+	// Destroy all players
+	with (oPlayer) {
+		if (id != oGame.winner.id) {
+			instance_destroy();	
+		}
+	}
+}

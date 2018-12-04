@@ -1,4 +1,14 @@
 if (room == asset_get_index("rmCharacter")) {
+	
+	draw_sprite_pos(
+		sBackdrop, 0, 
+		-room_width / 2, room_height / 2, 
+		room_width / 2, -room_height / 2, 
+		room_width + room_width / 2, room_height / 2, 
+		room_width / 2, room_height + room_height / 2,
+		0.2
+	);
+	
 	image_speed = 0.1;
 	var p1x = room_width / 2 - 48;
 	var p1y = room_height / 2;
@@ -123,7 +133,10 @@ if (room == asset_get_index("rmCharacter")) {
 	
 	if (drawArrow)
 		draw_sprite(sArrow, 0, p1x + (32 * (characterIndex - 1)), p1y + 16);
-	
+		
+	var sca = abs(sin(counter) + 1);
+	var rot = sin(counter) * 30;
+	draw_sprite_ext(sPressStart, 0, room_width / 2, room_height - 75, sca, sca, rot, c_white, 1);	
 }
 
 //draw_text(10, 10, characterIndex);

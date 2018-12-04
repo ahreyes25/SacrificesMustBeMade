@@ -50,6 +50,8 @@ if (showIcon || inHitStun) {
 	draw_sprite(sPlayer, player - 1, x, y);
 }
 
+/*
+// Draw Line To Player That Just Scored
 var red = make_color_rgb(204, 55, 77);
 var yel = make_color_rgb(230, 145, 70);
 var gre = make_color_rgb(73, 143, 96);
@@ -75,6 +77,7 @@ if (justScored) {
 			break;
 	}
 }
+*/
 
 /*
 if (isComputer) {

@@ -320,8 +320,10 @@ if (room == asset_get_index("rmCharacter")) {
 	#region Fullscreen
 	kFull = kShift1 || kShift2 || kShift3 || kShift4;
 
-	if (kExit1)
+	if (kExit1) {
 	    room_goto_previous();
+		instance_destroy();
+	}
 
 	// Fullscreen
 	if (kFull)
@@ -405,3 +407,6 @@ if (room == asset_get_index("rmCharacter")) {
 
 	characterIndex = clamp(characterIndex, 1, 4);
 }
+
+counter += 0.01;
+counter2 += 0.5;
