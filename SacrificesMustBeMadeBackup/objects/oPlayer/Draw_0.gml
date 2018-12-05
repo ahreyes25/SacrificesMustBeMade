@@ -88,7 +88,9 @@ if (justScored) {
 if (isComputer) {
 	if (target != noone) {
 		if (instance_exists(target)) {
-			draw_line_color(x, y, target.x, target.y, c_red, c_red);
+			draw_line_color(x, y, target.x, target.y, c_aqua, c_aqua);
 		}
 	}
 }
+
+draw_text(x, y - 50, runaway);

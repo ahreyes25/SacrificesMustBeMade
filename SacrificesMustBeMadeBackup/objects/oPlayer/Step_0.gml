@@ -32,78 +32,109 @@ if (!oGame.paused) {
 
 	#region Computer Controlled
 	else {
-		#region Set starting target
-		if (instance_exists(oSacrifice) && target == noone) {
-			var nearestSac = instance_nearest(x, y, oSacrifice);
-			target = nearestSac;
-		}
-		#endregion
+		#region Not Running Away
+		if (!runaway) {
+			#region Set starting target
+			if (instance_exists(oSacrifice) && target == noone) {
+				var nearestSac = instance_nearest(x, y, oSacrifice);
+				target = nearestSac;
+			}
+			#endregion
 		
-		#region Pickup Sacrifice
-		if (touching(oSacrifice) && carrying == noone && !touching(oAltar)) {
-			kPickup = true;
-		}
-		// Drop Crate to pickup sacrifice
-		else if (touching(oSacrifice) && carrying != noone && !touching(oAltar)) {
-			if (carrying.object_index == oCrate) {
-				kUp = true;
+			#region Pickup Sacrifice
+			if (touching(oSacrifice) && carrying == noone && !touching(oAltar)) {
 				kPickup = true;
 			}
-		}
-		#endregion
+			// Drop Crate to pickup sacrifice
+			else if (touching(oSacrifice) && carrying != noone && !touching(oAltar)) {
+				if (carrying.object_index == oCrate) {
+					kUp = true;
+					kPickup = true;
+				}
+			}
+			#endregion
 
-		#region Pickup Crate
-		// Pickup Crate
-		var c = touching(oCrate);
-			if (c != noone) {
-				if (c.phy_speed == 0 && !touching(oSacrifice) && carrying == noone) {
-					if (canPickupCrate) {
+			#region Pickup Crate
+			// Pickup Crate
+			var c = touching(oCrate);
+				if (c != noone) {
+					if (c.phy_speed == 0 && !touching(oSacrifice) && carrying == noone) {
+						if (canPickupCrate) {
+							kPickup = true;	
+						}
+					}
+				}
+			#endregion
+
+			#region Carrying Sacrifice 
+			if (instance_exists(oSacrifice) && carrying != noone) {
+				if (instance_exists(oAltar) && carrying.object_index == oSacrifice) {
+					var nearestAltar = instance_nearest(x, y, oAltar);
+					target  = nearestAltar;
+				}
+			}
+			#endregion
+	
+			#region Touching Altar
+			if (touching(oAltar)) {
+				altar = instance_nearest(x, y, oAltar);
+				// Put Down Sacrifice
+				if (carrying != noone) {
+					if (carrying.object_index == oSacrifice) {
+						kDown = true;
 						kPickup = true;	
 					}
-				}
-			}
-		#endregion
-
-		#region Carrying Sacrifice 
-		if (instance_exists(oSacrifice) && carrying != noone) {
-			if (instance_exists(oAltar) && carrying.object_index == oSacrifice.object_index) {
-				var nearestAltar = instance_nearest(x, y, oAltar);
-				target  = nearestAltar;
-			}
-		}
-		#endregion
-	
-		#region Touching Altar
-		if (touching(oAltar)) {
-			altar = instance_nearest(x, y, oAltar);
-			// Put Down Sacrifice
-			if (carrying != noone) {
-				if (carrying.object_index == oSacrifice) {
-					kDown = true;
-					kPickup = true;	
-				}
-				else if (carrying.object_index == oCrate) {
-					var nearestP = instance_nearest(x, y, oPlayer);
-					if (nearestP.x > x) {
-						kRight = true;
-						kPickup = true;
-					}
-					else {
-						kLeft = true;
-						kPickup = true;
+					else if (carrying.object_index == oCrate) {
+						var nearestP = instance_nearest(x, y, oPlayer);
+						if (nearestP.x > x) {
+							kRight = true;
+							kPickup = true;
+						}
+						else {
+							kLeft = true;
+							kPickup = true;
+						}
 					}
 				}
-			}
-			else {
-				if (altar != noone) {
-					if (altar.victim != noone) {
-						if (altar.victim.phy_speed == 0) {
-							// Enter into mashing state
-							if (!mashing) {
-								kSacrifice = true;	
+				// Not carrying anything at altar
+				else {
+					if (altar != noone) {
+						// Victim at altar
+						if (altar.victim != noone) {
+							if (altar.victim.phy_speed == 0 && altar.nPlayersTouching == 1) {
+								// Enter into mashing state
+								if (!mashing) {
+									kSacrifice = true;	
+								}
+								// Start Mashing
+								else {
+									if (alarm[3] == -1) {
+										alarm[3] = irandom_range(mashSpeedMin, mashSpeedMax);
+							
+										if (masher != noone) 
+											if (instance_exists(masher)) 
+												masher.kSacrifice = true;
+									}
+									else {
+										if (masher != noone)
+											if (instance_exists(masher))
+												masher.kSacrifice = false;	
+									}
+								}
 							}
-							// Start Mashing
-							else {
+							// Start running away
+							else if (altar.victim.phy_speed == 0 && altar.nPlayersTouching > 1) {
+								if (!mashing) {
+									runaway = true;
+									if (alarm[9] == -1) {
+										alarm[9] = 150; // run for 5 seconds	
+									}
+								}
+							}
+						}
+						// Mash Until no longer  mashing if sacrifice gets stolen
+						else {
+							if (mashing) {
 								if (alarm[3] == -1) {
 									alarm[3] = irandom_range(mashSpeedMin, mashSpeedMax);
 							
@@ -115,54 +146,95 @@ if (!oGame.paused) {
 									if (masher != noone)
 										if (instance_exists(masher))
 											masher.kSacrifice = false;	
-								}
+								}	
 							}
 						}
 					}
-					// Mash Until no longer  mashing if sacrifice gets stolen
-					else {
-						if (mashing) {
-							if (alarm[3] == -1) {
-								alarm[3] = irandom_range(mashSpeedMin, mashSpeedMax);
-							
-								if (masher != noone) 
-									if (instance_exists(masher)) 
-										masher.kSacrifice = true;
+				
+					if (target != noone) {
+						if (instance_exists(target)) {
+							if (target.object_index != oCpuTargetPoint) {
+								target = instance_nearest(x, y, oSacrifice);
 							}
-							else {
-								if (masher != noone)
-									if (instance_exists(masher))
-										masher.kSacrifice = false;	
-							}	
 						}
+						else {
+							target = instance_nearest(x, y, oSacrifice);
+						}
+					}
+					else {
+						target = instance_nearest(x, y, oSacrifice);
 					}
 				}
-				
-				if (target.object_index != oCpuTargetPoint)
-					target = instance_nearest(x, y, oSacrifice);
 			}
+			#endregion
+	
+			#region Reassign Target To Crate If Sac is Carried
+			if (target != noone) {
+				if (instance_exists(target)) {
+					if (target.object_index == oSacrifice) {
+						if (target.attachedTo != noone) {
+							var nearCrate = instance_nearest(x, y, oCrate);
+							target = nearCrate;
+						}
+					}
+					else if (target.object_index == oCrate) {
+						var nearCrate = instance_nearest(x, y, oCrate);
+						target = nearCrate;	
+					}
+				}
+			}			
+			#endregion
 		}
 		#endregion
-	
-		#region Reassign Target To Crate If Sac is Carried
-		if (target != noone) {
-			if (instance_exists(target)) {
-				if (target.object_index == oSacrifice) {
-					if (target.attachedTo != noone) {
-						var nearCrate = instance_nearest(x, y, oCrate);
-						target = nearCrate;
+		
+		#region Running Away
+		else {
+			// Go get sacrifice if it is not attached to anything
+			var sac = instance_nearest(x, y, oSacrifice);
+			if (sac.attachedTo == noone) {
+				target = sac;
+			}
+			// Go Get crate instead
+			else {
+				// Dont Have Crate
+				if (carrying == noone) {
+					target = instance_nearest(x, y, oCrate);	
+				}
+				else {
+					// Already Holding Crate
+					if (carrying.object_index == oCrate) {
+						target = sac;	
 					}
 				}
 			}
-		}			
+			
+			// Pickup Sacrifice
+			if (touching(oSacrifice)) {
+				if (carrying != noone) {
+					if (carrying.object_index == oCrate) {
+						kUp = true;
+						kPickup = true;
+					}
+				}
+				else {
+					kPickup = true;
+					target = instance_furthest(x, y, oCpuTargetPoint);
+				}
+			}
+		}
 		#endregion
 		
 		#region Carrying Box
 		if (carrying != noone) {
 			if (carrying.object_index = oCrate) {
 				
-				if (target.object_index != oCpuTargetPoint)
-					target = instance_nearest(x, y, oSacrifice);
+				if (target != noone) {
+					if (instance_exists(target)) {
+						if (target.object_index != oCpuTargetPoint) {
+							target = instance_nearest(x, y, oSacrifice);
+						}
+					}
+				}
 				
 				var hit;
 				var pd1 = 0;
@@ -297,7 +369,7 @@ if (!oGame.paused) {
 		#region Standing Still For Too Long
 		if (x == xprevious && !mashing && !touching(oAltar)) {
 			if (alarm[8] == -1) {
-				alarm[8] = 60;
+				alarm[8] = 120;
 				xpos = x;
 			}
 		}
@@ -340,12 +412,6 @@ if (!oGame.paused) {
 					else if (x < target.x) {
 						kRight = true;	
 					}
-		
-					// Fall through platforms
-					if (touching(oPass_par) && target.y > y) {
-						kDown = true;	
-						kJump = true;
-					}
 				}
 		
 				// Vertically Move
@@ -353,6 +419,11 @@ if (!oGame.paused) {
 					// Jump to target
 					if (y > target.y && xThresh) {
 						kJump = true;	
+					}
+					// Fall through platforms
+					else if (touching(oPass_par) && target.y > y) {
+						kDown = true;	
+						kJump = true;
 					}
 				}
 			}

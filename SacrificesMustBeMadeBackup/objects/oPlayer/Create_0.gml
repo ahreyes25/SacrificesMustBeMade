@@ -58,6 +58,7 @@ canPickupCrate		= true;
 justScored			= false;
 punished			= false;
 xpos				= noone;
+runaway				= false;
 
 idleState			= humanState.IDLE;
 runState			= humanState.RUN;
