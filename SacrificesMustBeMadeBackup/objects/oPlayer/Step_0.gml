@@ -187,15 +187,15 @@ if (!oGame.paused) {
 			if (target != noone) {
 				if (instance_exists(target)) {
 					if (target.object_index == oSacrifice) {
-						if (target.attachedTo != noone) {
-							var nearCrate = instance_nearest(x, y, oCrate);
-							target = nearCrate;
-						}
+						if (target.attachedTo != noone)
+							target = instance_nearest(x, y, oCrate);
 					}
-					else if (target.object_index == oCrate) {
-						var nearCrate = instance_nearest(x, y, oCrate);
-						target = nearCrate;	
-					}
+					//else if (target.object_index == oCrate) {
+					//	if (target.attachedTo == noone)
+					//		target = instance_nearest(x, y, oCrate);
+						//else 
+						//	target = instance_furthest(x, y, oCrate);
+					//}
 				}
 			}			
 			#endregion
@@ -204,41 +204,48 @@ if (!oGame.paused) {
 		
 		#region Running Away
 		else {
-			// Go get sacrifice if it is not attached to anything
-			var sac = instance_nearest(x, y, oSacrifice);
-			if (sac.attachedTo == noone) {
-				target = sac;
-			}
-			// Go Get crate instead
-			else {
-				// Dont Have Crate
-				if (carrying == noone) {
-					target = instance_nearest(x, y, oCrate);	
+			// Only run if there are no players at the altar
+			if (oAltar.nPlayersTouching >= 1) {
+				// Go get sacrifice if it is not attached to anything
+				var sac = instance_nearest(x, y, oSacrifice);
+				if (sac.attachedTo == noone) {
+					target = sac;
 				}
+				// Go Get crate instead
 				else {
-					// Already Holding Crate
-					if (carrying.object_index == oCrate) {
-						target = sac;	
+					// Dont Have Crate
+					if (carrying == noone) {
+						target = instance_nearest(x, y, oCrate);	
 					}
-				}
-			}
-			
-			// Pickup Sacrifice
-			if (touching(oSacrifice)) {
-				if (carrying != noone) {
-					if (instance_exists(carrying)) {
+					else {
+						// Already Holding Crate
 						if (carrying.object_index == oCrate) {
-							kUp = true;
-							kPickup = true;
+							target = sac;	
 						}
 					}
-					else 
-						carrying = noone;
 				}
-				else {
-					kPickup = true;
-					target = instance_furthest(x, y, oCpuTargetPoint);
+			
+				// Pickup Sacrifice
+				if (touching(oSacrifice)) {
+					if (carrying != noone) {
+						if (instance_exists(carrying)) {
+							if (carrying.object_index == oCrate) {
+								kUp = true;
+								kPickup = true;
+							}
+						}
+						else 
+							carrying = noone;
+					}
+					else {
+						kPickup = true;
+						target = instance_furthest(x, y, oCpuTargetPoint);
+					}
 				}
+			}
+			// Stop running away when there is noone at the altar
+			else {
+				runaway = false;	
 			}
 		}
 		#endregion
@@ -389,6 +396,20 @@ if (!oGame.paused) {
 		}
 		#endregion
 		
+		#region Stop Chasing After One Box
+		if (target != noone) {
+			if (instance_exists(target)) {
+				if (target.object_index == oCrate) {
+					if (target.attachedTo != noone) {
+						target = instance_nearest(x, y, oSacrifice);
+					}
+				}
+			}
+			else
+				target = noone;
+		}
+		#endregion
+		
 		#region Standing Still For Too Long
 		if (x == xprevious && !mashing && !touching(oAltar)) {
 			if (alarm[8] == -1) {
@@ -411,6 +432,14 @@ if (!oGame.paused) {
 			}
 		}
 		#endregion
+		
+		/*
+		#region Highest Priority Is Sacrifice At Altar
+		if (oAltar.nPlayersTouching >= 1 && !touching(oAltar)) {
+			target = instance_nearest(x, y, oSacrifice);
+		}
+		#endregion
+		*/
 		
 		#region Not Doing Anything
 		if (target == noone) {
