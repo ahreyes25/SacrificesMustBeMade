@@ -56,7 +56,7 @@ if (kEnter1 || kEnter2 || kEnter3 || kEnter4 || kJump1 || kJump2 || kJump3 || kJ
 	audio_stop_sound(sMenuSong);
 }
 
-if (kShift1 || kShift2 || kShift3 || kShift4 || kPickup1 || kPickup2 || kPickup3 || kPickup4 || 
+if (kPickup1 || kPickup2 || kPickup3 || kPickup4 || 
 	kSacrifice1 || kSacrifice2 || kSacrifice3 || kSacrifice4) {
 	room_goto_previous();	
 }

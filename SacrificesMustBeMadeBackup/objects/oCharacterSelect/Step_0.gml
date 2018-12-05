@@ -397,9 +397,10 @@ if (room == asset_get_index("rmCharacter")) {
 	#endregion
 
 	if (kEnter1) {
-		if (alarm[0] == -1) {
-			alarm[0] = waitTime;
-		}
+		//if (alarm[0] == -1) {
+		//	alarm[0] = waitTime;
+		//}
+		room_goto_next();
 	}
 
 	imSpeed += 0.3;

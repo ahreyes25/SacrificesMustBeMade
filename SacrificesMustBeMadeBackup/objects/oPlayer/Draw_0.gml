@@ -50,6 +50,12 @@ if (showIcon || inHitStun) {
 	draw_sprite(sPlayer, player - 1, x, y);
 }
 
+var red = make_color_rgb(204, 55, 77);
+var lineW = 2;
+if (punished) {
+	draw_line_width_color(x, y - 8, oDragon.x, oDragon.y, lineW, red, red);
+}
+
 /*
 // Draw Line To Player That Just Scored
 var red = make_color_rgb(204, 55, 77);
@@ -79,18 +85,10 @@ if (justScored) {
 }
 */
 
-/*
 if (isComputer) {
 	if (target != noone) {
 		if (instance_exists(target)) {
 			draw_line_color(x, y, target.x, target.y, c_red, c_red);
 		}
 	}
-	
-	if (seeking != noone) {
-		if (instance_exists(seeking)) {
-			draw_line_color(x, y, seeking.x, seeking.y, c_green, c_green);
-		}
-	}
 }
-*/

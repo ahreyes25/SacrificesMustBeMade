@@ -30,6 +30,9 @@ if (oCharacterSelect.p1in != in.OFF) {
 	p1.hurtSprite	= asset_get_index("s" + string(p1.name) + "_hurt");
 	p1.altarSprite	= asset_get_index("s" + string(p1.name) + "_kill");
 }
+else {
+	p1 = noone;	
+}
 
 if (oCharacterSelect.p2in != in.OFF) {
 	// Create Player 2
@@ -46,6 +49,9 @@ if (oCharacterSelect.p2in != in.OFF) {
 	p2.jumpSprite	= asset_get_index("s" + string(p2.name) + "_jump");
 	p2.hurtSprite	= asset_get_index("s" + string(p2.name) + "_hurt");
 	p2.altarSprite	= asset_get_index("s" + string(p2.name) + "_kill");
+}
+else {
+	p2 = noone;	
 }
 
 if (oCharacterSelect.p3in != in.OFF) {
@@ -64,6 +70,9 @@ if (oCharacterSelect.p3in != in.OFF) {
 	p3.hurtSprite	= asset_get_index("s" + string(p3.name) + "_hurt");
 	p3.altarSprite	= asset_get_index("s" + string(p3.name) + "_kill");
 }
+else {
+	p3 = noone;	
+}
 
 if (oCharacterSelect.p4in != in.OFF) {
 	// Create Player 4
@@ -80,6 +89,9 @@ if (oCharacterSelect.p4in != in.OFF) {
 	p4.jumpSprite	= asset_get_index("s" + string(p4.name) + "_jump");
 	p4.hurtSprite	= asset_get_index("s" + string(p4.name) + "_hurt");
 	p4.altarSprite	= asset_get_index("s" + string(p4.name) + "_kill");
+}
+else {
+	p4 = noone;	
 }
 
 if (!instance_exists(oDragon)) {

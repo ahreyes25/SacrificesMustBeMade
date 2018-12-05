@@ -34,10 +34,11 @@ if (attachedTo == noone) {
 					masher = noone;
 								
 					// Lose Connection To Sacrifice
-					if (carrying != noone) {
+					//if (carrying != noone) {
+					if (instance_exists(carrying))
 						carrying.attachedTo = noone;
-						carrying = noone;
-					}
+					carrying = noone;
+					//}
 
 					state		 = humanState.HURT;
 					phy_rotation = 0;

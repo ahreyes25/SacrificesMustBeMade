@@ -1806,6 +1806,25 @@
             }
         },
         {
+            "Key": "988c5f74-6258-4737-a77a-7e38ff73a55e",
+            "Value": {
+                "id": "eb357f61-a8af-43ae-ae74-f26a14ea0aff",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/oCpuTargetPoint\/oCpuTargetPoint.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "99f1e65b-59a2-4f98-92e7-271d2ba3c6f8",
             "Value": {
                 "id": "8f68638e-e389-45a1-a4f3-d9142fda12ae",
@@ -3237,6 +3256,7 @@
         "d6ef0575-4cab-4498-8a4d-91d6cec862d4",
         "f325b017-6500-44d1-820a-9496a5a173fd",
         "f8775463-c1ca-4b9c-9508-fd76210777dd",
+        "a8132fd2-9c0a-4857-b6fd-eac47149813d",
         "0b5e822c-03dc-4950-ae33-d541aa172c20",
         "ca44442b-0e42-4a28-b04d-bc73d43ba15e",
         "edc3aa24-8794-41eb-bd64-9d74c83a4f76",
@@ -3251,8 +3271,7 @@
         "bcfa1e15-7978-4363-8215-0db4b157a7dd",
         "2810ac80-4d48-4efd-82dd-c83d3b3f7afd",
         "3566b8db-46e3-4d59-a26a-1296a0d99631",
-        "050caa25-edce-443d-ad0c-e465c8a9c22d",
-        "a8132fd2-9c0a-4857-b6fd-eac47149813d"
+        "050caa25-edce-443d-ad0c-e465c8a9c22d"
     ],
     "tutorial": ""
 }

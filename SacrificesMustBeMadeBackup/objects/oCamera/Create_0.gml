@@ -19,3 +19,5 @@ target = noone;
 
 cameraWidth = 320;
 cameraHeight = 240;
+
+altarFocus = false;

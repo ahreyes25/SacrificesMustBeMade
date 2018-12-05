@@ -1,9 +1,9 @@
 /// @description Hit Stun
 
-if (phy_speed != 0) {
-	alarm[1] = 1;	
-}
-else {
+//if (phy_speed != 0) {
+//	alarm[1] = 1;	
+//}
+//else {
 	inHitStun				= false;
 	phy_rotation			= 0;
 	phy_linear_velocity_x	= 0;
@@ -16,4 +16,4 @@ else {
 		showIcon = true;
 		alarm[4] = showIconTime;
 	}
-}
+//}

@@ -51,12 +51,13 @@ showIcon			= false;
 
 // CPU
 target				= noone;
-seeking				= noone;
 mashDown			= false;
 mashSpeedMin		= 5;
 mashSpeedMax		= 10;
 canPickupCrate		= true;
 justScored			= false;
+punished			= false;
+xpos				= noone;
 
 idleState			= humanState.IDLE;
 runState			= humanState.RUN;

@@ -1,4 +1,7 @@
 if (instance_exists(owner)) {
+	x = owner.x;
+	y = owner.y;
+	
 	if (!owner.isComputer)
 		input();
 
@@ -38,6 +41,7 @@ if (instance_exists(owner)) {
 			if (ds_exists(owner.skulls, ds_type_list) && altar.victim != noone) 
 				ds_list_add(owner.skulls, altar.victim.image_index);
 			
+			// Final kill is collected
 			if (ds_list_size(owner.skulls) == oGame.numberOfSkullsToWin) {
 				oGame.winner = owner;
 				oGame.gameWon= true;
@@ -80,6 +84,53 @@ if (instance_exists(owner)) {
 		owner.mashing	= false;
 		owner.alarm[2]	= 15;
 		owner.finishing	= true;
+		
+		/* // Focus On Player
+		if (instance_exists(oCamera)) {
+			oCamera.target = owner;
+			oCamera.altarFocus = true;
+		}
+		*/
+		
+		// Blast all others away
+		var insts = ds_list_create();
+		collision_circle_list(x, y, 64, oPlayer, false, true, insts, false); 
+		//collision_circle_list(x, y, 10, oCrate, false, true, insts, false);
+		
+		for (var i = 0; i < ds_list_size(insts); i++) {
+			var inst = ds_list_find_value(insts, i);
+	
+			if (inst.id != owner.id) {
+				inst.inHitStun  = true;
+				inst.phy_active = true;
+				inst.alarm[1]	= inst.hitStun;
+				inst.mashing	= false;
+				inst.finishing	= false;
+				inst.punished	= true;
+				
+				if (inst.alarm[7] == -1)
+					inst.alarm[7] = 60;
+				
+				audio_play_sound(sfxHurt, 0, 0);
+				blood_particles(10);
+				
+				if (inst.carrying != noone) {
+					if (instance_exists(inst.carrying.attachedTo)) 
+						inst.carrying.attachedTo = noone;
+					inst.carrying = noone;
+				}
+	
+				with (inst) {
+					if (oAltar.x > room_width / 2)
+						physics_apply_impulse(x, y, -1, 0);
+					else if (oAltar.x < room_width / 2)
+						physics_apply_impulse(x, y, 1, 0);
+					else
+						physics_apply_impulse(x, y, random_range(-1, 1), -2);
+				}
+			}
+		}
+		ds_list_destroy(insts);
 	
 		// Destroy Masher
 		instance_destroy();	

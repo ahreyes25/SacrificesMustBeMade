@@ -32,79 +32,10 @@ if (!oGame.paused) {
 
 	#region Computer Controlled
 	else {
-		// Set sacrifice as default starting target
-		if (instance_exists(oSacrifice) && target == noone && seeking == noone) {
+		#region Set starting target
+		if (instance_exists(oSacrifice) && target == noone) {
 			var nearestSac = instance_nearest(x, y, oSacrifice);
 			target = nearestSac;
-			seeking = nearestSac;
-		}
-	
-		#region Assign target
-		if (seeking != noone) {
-			if (instance_exists(seeking)) {
-			
-				// Draw Vector Directly To seeking
-				var hit = collision_line(x, y, seeking.x, seeking.y, seeking.object_index, false, true);
-				if (hit != noone) {
-				
-					// Can See seeking Directly
-					if (hit.object_index == seeking.object_index) {
-						target = seeking;
-					}
-					// Cannot See seeking Directly, Check For Crate
-					else {
-						// Check for nearest crate
-						var closestCrate = instance_nearest(x, y, oCrate);
-						if (closestCrate != noone) {
-							var cHit = collision_line(x, y, closestCrate.x, closestCrate.y, oCrate, false, true);
-							if (cHit != noone) {
-								target = closestCrate;
-								seeking = target;
-							}
-							// Cannot See Crate, Go To Player
-							else {
-								target = oGame.p1;	
-								seeking = target;
-							}
-						}
-					}
-				}
-			}
-		}
-		#endregion
-		
-		#region Move To Target
-		if (target != noone) {
-			if (instance_exists(target)) {
-				var xDis = point_distance(x, y, target.x, y);
-				var yDis = point_distance(x, y, x, target.y);
-				var xThresh = xDis > 10;
-				var yThresh = yDis > 25;
-		
-				// Horizontally Move
-				if (xThresh) {
-					if (x > target.x) {
-						kLeft = true;	
-					}
-					else if (x < target.x) {
-						kRight = true;	
-					}
-		
-					// Fall through platforms
-					if (touching(oPass_par) && target.y > y) {
-						kDown = true;	
-						kJump = true;
-					}
-				}
-		
-				// Vertically Move
-				if (yThresh) {
-					// Jump to target
-					if (y > target.y && xThresh) {
-						kJump = true;	
-					}
-				}
-			}
 		}
 		#endregion
 		
@@ -125,11 +56,11 @@ if (!oGame.paused) {
 		// Pickup Crate
 		var c = touching(oCrate);
 			if (c != noone) {
-			if (c.phy_speed == 0 && !touching(oSacrifice) && carrying == noone) {
-				if (canPickupCrate) {
-					kPickup = true;	
+				if (c.phy_speed == 0 && !touching(oSacrifice) && carrying == noone) {
+					if (canPickupCrate) {
+						kPickup = true;	
+					}
 				}
-			}
 			}
 		#endregion
 
@@ -137,62 +68,7 @@ if (!oGame.paused) {
 		if (instance_exists(oSacrifice) && carrying != noone) {
 			if (instance_exists(oAltar) && carrying.object_index == oSacrifice.object_index) {
 				var nearestAltar = instance_nearest(x, y, oAltar);
-				seeking = nearestAltar;	
 				target  = nearestAltar;
-			}
-		}
-		#endregion
-	
-		#region Carrying Box
-		if (carrying != noone) {
-			if (carrying.object_index = oCrate.object_index) {
-				var hit;
-			
-				var nearPlayer = instance_nearest(oAltar.x, oAltar.y, oPlayer);
-			
-				// Look Right & Left
-				hit = collision_line(x, y, nearPlayer.x, y, oPlayer, false, true);
-				if (hit != noone) {
-					// Throw Right
-					if (hit.x > x) {
-						kRight = true;
-						kPickup = true;
-					}
-					else {
-						kLeft = true;
-						kPickup = true;
-					}
-				
-					if (alarm[5] == -1) {
-						alarm[5] = 30; // crate pickup cooldown
-						canPickupCrate = false;
-					}
-				}
-				// Look Up & Down
-				else {
-					hit = collision_line(x, y, x, nearPlayer.y, oPlayer, false, true);
-					if (hit != noone) {
-						// Throw Down
-						if (hit.y > y) {
-							kDown = true;
-							kPickup = true;
-						}
-						else {
-							kUp = true;
-							kPickup = true;
-						}
-					}
-				
-					if (alarm[5] == -1) {
-						alarm[5] = 30; // crate pickup cooldown
-						canPickupCrate = false;
-					}
-				}
-			
-				// Set Target Once Holding Crate
-				var nearSac = instance_nearest(x, y, oSacrifice);
-				target = nearSac;
-				seeking = nearSac;
 			}
 		}
 		#endregion
@@ -218,7 +94,6 @@ if (!oGame.paused) {
 					}
 				}
 			}
-			// Start Mashing
 			else {
 				if (altar != noone) {
 					if (altar.victim != noone) {
@@ -262,30 +137,226 @@ if (!oGame.paused) {
 						}
 					}
 				}
+				
+				if (target.object_index != oCpuTargetPoint)
+					target = instance_nearest(x, y, oSacrifice);
 			}
 		}
 		#endregion
 	
-		#region Not Holding Anything
-		if (carrying == noone) {
-			var nearestSac = instance_nearest(x, y, oSacrifice);
-			seeking = nearestSac;
-			target = nearestSac;
-		}
-		#endregion
-	
-		#region Reassign Target To Crate
+		#region Reassign Target To Crate If Sac is Carried
 		if (target != noone) {
 			if (instance_exists(target)) {
 				if (target.object_index == oSacrifice) {
 					if (target.attachedTo != noone) {
 						var nearCrate = instance_nearest(x, y, oCrate);
 						target = nearCrate;
-						seeking = nearCrate;
 					}
 				}
 			}
 		}			
+		#endregion
+		
+		#region Carrying Box
+		if (carrying != noone) {
+			if (carrying.object_index = oCrate) {
+				
+				if (target.object_index != oCpuTargetPoint)
+					target = instance_nearest(x, y, oSacrifice);
+				
+				var hit;
+				var pd1 = 0;
+				var pd2 = 0;
+				var pd3 = 0;
+				var pd4 = 0;
+				var nearPlayer = noone;
+				
+				// Get player at altar
+				if (nearPlayer == noone) {
+					if (oAltar.victim != noone) {
+						if (instance_exists(oAltar.victim)) {
+							nearPlayer = instance_nearest(oAltar.x, oAltar.y, oPlayer);
+							
+							if (nearPlayer.id == id)
+								nearPlayer = noone;
+						}
+					}
+				}
+				
+				// Get player carrying sacrifice
+				if (nearPlayer == noone) {
+					if (instance_exists(oSacrifice)) {
+						if (oSacrifice.attachedTo != noone) {
+							if (instance_exists(oSacrifice.attachedTo)) {
+								if (oSacrifice.attachedTo.id != id) {
+									nearPlayer = oSacrifice.attachedTo;
+								}
+							}
+						}
+					}
+				}
+
+				// Get nearest player
+				if (nearPlayer == noone) {
+					if (oGame.p1 != noone) {
+						if (instance_exists(oGame.p1)) {
+							if (oGame.p1.id != id) {
+								pd1 = point_distance(x, y, oGame.p1.x, oGame.p1.y);
+							}
+						}
+					}
+					if (oGame.p2 != noone) {
+						if (instance_exists(oGame.p2)) {
+							if (oGame.p2.id != id) {
+								pd2 = point_distance(x, y, oGame.p2.x, oGame.p2.y);
+							}
+						}
+					}
+					if (oGame.p3 != noone) {
+						if (instance_exists(oGame.p3)) {
+							if (oGame.p3.id != id) {
+								pd3 = point_distance(x, y, oGame.p3.x, oGame.p3.y);
+							}
+						}
+					}
+					if (oGame.p4 != noone) {
+						if (instance_exists(oGame.p4)) {
+							if (oGame.p4.id != id) {
+								pd4 = point_distance(x, y, oGame.p4.x, oGame.p4.y);
+							}
+						}
+					}
+					
+					var pmax = max(pd1, pd2, pd3, pd4);
+					if (pmax == pd1) {
+						var nearPlayer = oGame.p1;
+					}
+					else if (pmax == pd2) {
+						var nearPlayer = oGame.p2;
+					}
+					else if (pmax == pd3) {
+						var nearPlayer = oGame.p3;
+					}
+					else if (pmax == pd4) {
+						var nearPlayer = oGame.p4;
+					}
+				}
+			
+				// Look Right & Left
+				hit = collision_line(x, y, nearPlayer.x, y, oPlayer, false, true);
+				if (hit != noone) {
+					// Throw Right
+					if (hit.x > x) {
+						kRight = true;
+						kPickup = true;
+					}
+					else if (hit.x < x) {
+						kLeft = true;
+						kPickup = true;
+					}
+					else {
+						kUp = true;
+						kPickup = true;
+						kLeft = false;
+						kRight = false;
+					}
+				
+					if (alarm[5] == -1) {
+						alarm[5] = 30; // crate pickup cooldown
+						canPickupCrate = false;
+					}
+				}
+				// Look Up & Down
+				else {
+					hit = collision_line(x, y, x, nearPlayer.y, oPlayer, false, true);
+					if (hit != noone) {
+						// Throw Down
+						if (hit.y > y) {
+							kDown = true;
+							kPickup = true;
+							kLeft = false;
+							kRight = false;
+						}
+						else {
+							kUp = true;
+							kPickup = true;
+							kLeft = false;
+							kRight = false;
+						}
+					}
+				
+					if (alarm[5] == -1) {
+						alarm[5] = 30; // crate pickup cooldown
+						canPickupCrate = false;
+					}
+				}
+			}
+		}
+		#endregion
+		
+		#region Standing Still For Too Long
+		if (x == xprevious && !mashing && !touching(oAltar)) {
+			if (alarm[8] == -1) {
+				alarm[8] = 60;
+				xpos = x;
+			}
+		}
+		else
+			xpos = noone;
+		#endregion
+		
+		#region At Target Point
+		if (target != noone) {
+			if (instance_exists(target)) {
+				if (target.object_index == oCpuTargetPoint) {
+					if (point_distance(x, y, target.x, target.y) < 75) {
+						target = oSacrifice;	
+					}
+				}
+			}
+		}
+		#endregion
+		
+		#region Not Doing Anything
+		if (target == noone) {
+			var nearestSac = instance_nearest(x, y, oSacrifice);
+			target = nearestSac;
+		}
+		#endregion
+		
+		#region Move To Target
+		if (target != noone) {
+			if (instance_exists(target)) {
+				var xDis = point_distance(x, y, target.x, y);
+				var yDis = point_distance(x, y, x, target.y);
+				var xThresh = xDis > 10;
+				var yThresh = yDis > 25;
+		
+				// Horizontally Move
+				if (xThresh) {
+					if (x > target.x) {
+						kLeft = true;	
+					}
+					else if (x < target.x) {
+						kRight = true;	
+					}
+		
+					// Fall through platforms
+					if (touching(oPass_par) && target.y > y) {
+						kDown = true;	
+						kJump = true;
+					}
+				}
+		
+				// Vertically Move
+				if (yThresh) {
+					// Jump to target
+					if (y > target.y && xThresh) {
+						kJump = true;	
+					}
+				}
+			}
+		}
 		#endregion
 
 		// - - - - - - - - - - - - - - - - - - - - -
@@ -314,6 +385,11 @@ if (!oGame.paused) {
 		else if (inHitStun) {
 			state = humanState.HURT;	
 		}	
+		
+		x = phy_position_x;
+		y = phy_position_y;
+		xprevious = phy_position_xprevious;
+		yprevious = phy_position_yprevious;
 	}
 	#endregion
 }

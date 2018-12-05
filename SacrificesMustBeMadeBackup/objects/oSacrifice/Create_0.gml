@@ -44,6 +44,8 @@ fallState		= sacrificeState.FALL;
 altarState		= sacrificeState.ALTAR;
 carryState		= sacrificeState.CARRY;
 deadState		= sacrificeState.DEAD;
+canHit			= false;
+alarm[0]		= 90;
 
 var fix	= physics_fixture_create();
 physics_fixture_set_box_shape(fix, 8, 8);

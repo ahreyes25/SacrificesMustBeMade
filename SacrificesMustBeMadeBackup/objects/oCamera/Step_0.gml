@@ -34,3 +34,7 @@ else {
 	projmat = matrix_build_projection_ortho(640 * zoom, 480 * zoom, 1.0, 32000.0);
 }
 camera_set_proj_mat(cam, projmat);
+
+if (altarFocus && alarm[0] == -1) {
+	alarm[0] = 60;
+}

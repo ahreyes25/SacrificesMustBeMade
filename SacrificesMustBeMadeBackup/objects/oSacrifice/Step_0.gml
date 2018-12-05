@@ -2,9 +2,10 @@
 	if (attachedTo == noone && !dying) {
 		phy_active = true;
 	
+		/*
 		// Thrown at player
 		var hit	= touching(oEntity_par);
-		if (hit != noone && abs(phy_speed) >= 4 && lastAttachedTo != noone) {
+		if (hit != noone && abs(phy_speed) >= 4 && lastAttachedTo != noone && canHit) {
 			if (hit.id != lastAttachedTo.id) {
 		
 				var xforce = phy_linear_velocity_x / 500
@@ -36,7 +37,8 @@
 								
 						// Lose Connection To Sacrifice
 						if (carrying != noone) {
-							carrying.attachedTo = noone;
+							if (instance_exists(carrying.attachedTo))
+								carrying.attachedTo = noone;
 							carrying = noone;
 						}
 
@@ -49,6 +51,7 @@
 				depth = lastAttachedTo.depth + 1;
 			}
 		}
+		*/
 		
 		if (!on_ground()) {
 			if (state == idleState) {
