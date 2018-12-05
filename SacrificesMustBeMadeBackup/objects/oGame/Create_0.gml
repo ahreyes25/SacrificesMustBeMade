@@ -16,9 +16,38 @@ endingGame			= false;
 winner				= noone;
 numberOfSkullsToWin	= 5;
 
+p1x = 0;
+p1y = 0;
+p2x = 0;
+p2y = 0;
+p3x = 0;
+p3y = 0;
+p4x = 0;
+p4y = 0;
+
+for (var i = 0; i < instance_number(oSpawnPoint); i++) {
+	var sp = instance_find(oSpawnPoint, i);
+	if (i == 0) {
+		p1x = sp.x;
+		p1y = sp.y;
+	}
+	else if (i == 1) {
+		p2x = sp.x;
+		p2y = sp.y;
+	}
+	else if (i == 2) {
+		p3x = sp.x;
+		p3y = sp.y;
+	}
+	else if (i == 3) {
+		p4x = sp.x;
+		p4y = sp.y;
+	}
+}
+
 if (oCharacterSelect.p1in != in.OFF) {
 	// Create Player 1
-	p1				= instance_create_layer(440, 620, "Instances", oPlayer);
+	p1				= instance_create_layer(p1x, p1y, "Instances", oPlayer);
 	p1.isComputer	= oCharacterSelect.p1comp;
 	p1.takesInput	= !p1.isComputer;
 	p1.player		= 1;
@@ -38,7 +67,7 @@ else {
 
 if (oCharacterSelect.p2in != in.OFF) {
 	// Create Player 2
-	p2				= instance_create_layer(480, 620, "Instances", oPlayer);
+	p2				= instance_create_layer(p2x, p2y, "Instances", oPlayer);
 	p2.isComputer	= oCharacterSelect.p2comp;
 	p2.takesInput	= !p2.isComputer;
 	p2.player		= 2;
@@ -58,7 +87,7 @@ else {
 
 if (oCharacterSelect.p3in != in.OFF) {
 	// Create Player 3
-	p3				= instance_create_layer(520, 620, "Instances", oPlayer);
+	p3				= instance_create_layer(p3x, p3y, "Instances", oPlayer);
 	p3.isComputer	= oCharacterSelect.p3comp;
 	p3.takesInput	= !p3.isComputer;
 	p3.player		= 3;
@@ -78,7 +107,7 @@ else {
 
 if (oCharacterSelect.p4in != in.OFF) {
 	// Create Player 4
-	p4				= instance_create_layer(560, 620, "Instances", oPlayer);
+	p4				= instance_create_layer(p4x, p4y, "Instances", oPlayer);
 	p4.isComputer	= oCharacterSelect.p4comp;
 	p4.takesInput	= !p4.isComputer;
 	p4.player		= 4;
@@ -102,4 +131,4 @@ if (!instance_exists(oDragon)) {
 
 instance_create_layer(0, 0, "Controllers", oCenterOfMass);
 instance_create_layer(0, 0, "Controllers", oBloodSurface);
-instance_create_layer(0, 0, "Controllers", oCamera);
+instance_create_layer(room_width / 2, room_height, "Controllers", oCamera);

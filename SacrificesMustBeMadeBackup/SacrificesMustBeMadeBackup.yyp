@@ -552,6 +552,25 @@
             }
         },
         {
+            "Key": "370bfc94-a005-419d-9ea6-7fd4cf815654",
+            "Value": {
+                "id": "3c034339-770e-45a9-8234-e21018d4ee35",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/oSpawnPoint\/oSpawnPoint.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "3b18cb10-e226-4c23-a938-86802a1432e6",
             "Value": {
                 "id": "7745a0a1-bab3-473d-9d91-bfcb7a051f3f",
@@ -1160,6 +1179,25 @@
             }
         },
         {
+            "Key": "6273beac-7b9b-43b1-93ec-2bf7e6512e32",
+            "Value": {
+                "id": "0c16bdb9-02f7-4d71-9f10-dc35fa3976e6",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\/menu_input\/menu_input.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "63ed5c84-c241-4183-b428-0e97927d8ee5",
             "Value": {
                 "id": "bc60a64b-ce57-416c-b6c7-2224e682a4ee",
@@ -1271,6 +1309,25 @@
                 ],
                 "resourcePath": "objects\/oPass_par\/oPass_par.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6b302530-3006-465e-a3b9-651ea84981a2",
+            "Value": {
+                "id": "50e249ef-1e66-4fe5-b03f-3b80db44f6e8",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sSpawnPoint\/sSpawnPoint.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3290,7 +3347,8 @@
         "bcfa1e15-7978-4363-8215-0db4b157a7dd",
         "2810ac80-4d48-4efd-82dd-c83d3b3f7afd",
         "3566b8db-46e3-4d59-a26a-1296a0d99631",
-        "050caa25-edce-443d-ad0c-e465c8a9c22d"
+        "050caa25-edce-443d-ad0c-e465c8a9c22d",
+        "6273beac-7b9b-43b1-93ec-2bf7e6512e32"
     ],
     "tutorial": ""
 }
