@@ -85,6 +85,7 @@ if (justScored) {
 }
 */
 
+/*
 if (isComputer) {
 	if (target != noone) {
 		if (instance_exists(target)) {
@@ -94,3 +95,4 @@ if (isComputer) {
 }
 
 draw_text(x, y - 50, runaway);
+*/

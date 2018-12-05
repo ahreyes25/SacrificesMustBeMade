@@ -226,128 +226,106 @@ if (!oGame.paused) {
 		
 		#region Carrying Box
 		if (carrying != noone) {
-			if (carrying.object_index = oCrate) {
+			if (instance_exists(carrying)) {
+				if (carrying.object_index = oCrate) {
 				
-				if (target != noone) {
-					if (instance_exists(target)) {
-						if (target.object_index != oCpuTargetPoint) {
-							target = instance_nearest(x, y, oSacrifice);
+					if (target != noone) {
+						if (instance_exists(target)) {
+							if (target.object_index != oCpuTargetPoint) {
+								target = instance_nearest(x, y, oSacrifice);
+							}
 						}
 					}
-				}
 				
-				var hit;
-				var pd1 = 0;
-				var pd2 = 0;
-				var pd3 = 0;
-				var pd4 = 0;
-				var nearPlayer = noone;
+					var hit;
+					var pd1 = 0;
+					var pd2 = 0;
+					var pd3 = 0;
+					var pd4 = 0;
+					var nearPlayer = noone;
 				
-				// Get player at altar
-				if (nearPlayer == noone) {
-					if (oAltar.victim != noone) {
-						if (instance_exists(oAltar.victim)) {
-							nearPlayer = instance_nearest(oAltar.x, oAltar.y, oPlayer);
+					// Get player at altar
+					if (nearPlayer == noone) {
+						if (oAltar.victim != noone) {
+							if (instance_exists(oAltar.victim)) {
+								nearPlayer = instance_nearest(oAltar.x, oAltar.y, oPlayer);
 							
-							if (nearPlayer.id == id)
-								nearPlayer = noone;
+								if (nearPlayer.id == id)
+									nearPlayer = noone;
+							}
 						}
 					}
-				}
 				
-				// Get player carrying sacrifice
-				if (nearPlayer == noone) {
-					if (instance_exists(oSacrifice)) {
-						if (oSacrifice.attachedTo != noone) {
-							if (instance_exists(oSacrifice.attachedTo)) {
-								if (oSacrifice.attachedTo.id != id) {
-									nearPlayer = oSacrifice.attachedTo;
+					// Get player carrying sacrifice
+					if (nearPlayer == noone) {
+						if (instance_exists(oSacrifice)) {
+							if (oSacrifice.attachedTo != noone) {
+								if (instance_exists(oSacrifice.attachedTo)) {
+									if (oSacrifice.attachedTo.id != id) {
+										nearPlayer = oSacrifice.attachedTo;
+									}
 								}
 							}
 						}
 					}
-				}
 
-				// Get nearest player
-				if (nearPlayer == noone) {
-					if (oGame.p1 != noone) {
-						if (instance_exists(oGame.p1)) {
-							if (oGame.p1.id != id) {
-								pd1 = point_distance(x, y, oGame.p1.x, oGame.p1.y);
+					// Get nearest player
+					if (nearPlayer == noone) {
+						if (oGame.p1 != noone) {
+							if (instance_exists(oGame.p1)) {
+								if (oGame.p1.id != id) {
+									pd1 = point_distance(x, y, oGame.p1.x, oGame.p1.y);
+								}
 							}
 						}
-					}
-					if (oGame.p2 != noone) {
-						if (instance_exists(oGame.p2)) {
-							if (oGame.p2.id != id) {
-								pd2 = point_distance(x, y, oGame.p2.x, oGame.p2.y);
+						if (oGame.p2 != noone) {
+							if (instance_exists(oGame.p2)) {
+								if (oGame.p2.id != id) {
+									pd2 = point_distance(x, y, oGame.p2.x, oGame.p2.y);
+								}
 							}
 						}
-					}
-					if (oGame.p3 != noone) {
-						if (instance_exists(oGame.p3)) {
-							if (oGame.p3.id != id) {
-								pd3 = point_distance(x, y, oGame.p3.x, oGame.p3.y);
+						if (oGame.p3 != noone) {
+							if (instance_exists(oGame.p3)) {
+								if (oGame.p3.id != id) {
+									pd3 = point_distance(x, y, oGame.p3.x, oGame.p3.y);
+								}
 							}
 						}
-					}
-					if (oGame.p4 != noone) {
-						if (instance_exists(oGame.p4)) {
-							if (oGame.p4.id != id) {
-								pd4 = point_distance(x, y, oGame.p4.x, oGame.p4.y);
+						if (oGame.p4 != noone) {
+							if (instance_exists(oGame.p4)) {
+								if (oGame.p4.id != id) {
+									pd4 = point_distance(x, y, oGame.p4.x, oGame.p4.y);
+								}
 							}
 						}
-					}
 					
-					var pmax = max(pd1, pd2, pd3, pd4);
-					if (pmax == pd1) {
-						var nearPlayer = oGame.p1;
+						var pmax = max(pd1, pd2, pd3, pd4);
+						if (pmax == pd1) {
+							var nearPlayer = oGame.p1;
+						}
+						else if (pmax == pd2) {
+							var nearPlayer = oGame.p2;
+						}
+						else if (pmax == pd3) {
+							var nearPlayer = oGame.p3;
+						}
+						else if (pmax == pd4) {
+							var nearPlayer = oGame.p4;
+						}
 					}
-					else if (pmax == pd2) {
-						var nearPlayer = oGame.p2;
-					}
-					else if (pmax == pd3) {
-						var nearPlayer = oGame.p3;
-					}
-					else if (pmax == pd4) {
-						var nearPlayer = oGame.p4;
-					}
-				}
 			
-				// Look Right & Left
-				hit = collision_line(x, y, nearPlayer.x, y, oPlayer, false, true);
-				if (hit != noone) {
-					// Throw Right
-					if (hit.x > x) {
-						kRight = true;
-						kPickup = true;
-					}
-					else if (hit.x < x) {
-						kLeft = true;
-						kPickup = true;
-					}
-					else {
-						kUp = true;
-						kPickup = true;
-						kLeft = false;
-						kRight = false;
-					}
-				
-					if (alarm[5] == -1) {
-						alarm[5] = 30; // crate pickup cooldown
-						canPickupCrate = false;
-					}
-				}
-				// Look Up & Down
-				else {
-					hit = collision_line(x, y, x, nearPlayer.y, oPlayer, false, true);
+					// Look Right & Left
+					hit = collision_line(x, y, nearPlayer.x, y, oPlayer, false, true);
 					if (hit != noone) {
-						// Throw Down
-						if (hit.y > y) {
-							kDown = true;
+						// Throw Right
+						if (hit.x > x) {
+							kRight = true;
 							kPickup = true;
-							kLeft = false;
-							kRight = false;
+						}
+						else if (hit.x < x) {
+							kLeft = true;
+							kPickup = true;
 						}
 						else {
 							kUp = true;
@@ -355,14 +333,40 @@ if (!oGame.paused) {
 							kLeft = false;
 							kRight = false;
 						}
-					}
 				
-					if (alarm[5] == -1) {
-						alarm[5] = 30; // crate pickup cooldown
-						canPickupCrate = false;
+						if (alarm[5] == -1) {
+							alarm[5] = 30; // crate pickup cooldown
+							canPickupCrate = false;
+						}
+					}
+					// Look Up & Down
+					else {
+						hit = collision_line(x, y, x, nearPlayer.y, oPlayer, false, true);
+						if (hit != noone) {
+							// Throw Down
+							if (hit.y > y) {
+								kDown = true;
+								kPickup = true;
+								kLeft = false;
+								kRight = false;
+							}
+							else {
+								kUp = true;
+								kPickup = true;
+								kLeft = false;
+								kRight = false;
+							}
+						}
+				
+						if (alarm[5] == -1) {
+							alarm[5] = 30; // crate pickup cooldown
+							canPickupCrate = false;
+						}
 					}
 				}
 			}
+			else 
+				carrying = noone;
 		}
 		#endregion
 		
