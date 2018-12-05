@@ -14,6 +14,7 @@ with (oCenterOfMass)
 	instance_destroy();
 	
 audio_stop_sound(sfxBlood);
+audio_stop_sound(sQuetzalcoatl);
 
 room_goto(rmMenu);
 

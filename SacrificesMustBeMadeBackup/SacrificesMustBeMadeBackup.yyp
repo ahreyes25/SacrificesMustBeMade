@@ -571,6 +571,25 @@
             }
         },
         {
+            "Key": "3bdc501c-1f8f-4985-bf4d-0770e714ace8",
+            "Value": {
+                "id": "c60478ac-0a3b-4fe1-b337-96888a821dc7",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sQuetzalcoatl\/sQuetzalcoatl.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "3bf0330c-4a8b-4166-bc87-8ea479ddb3a7",
             "Value": {
                 "id": "33904d03-d29a-4085-8b9c-fcf8872fe035",

@@ -1,5 +1,7 @@
 randomize();
 
+audio_play_sound(sQuetzalcoatl, 0, 1);
+
 propIndex			= 0;
 numberOfProperties	= 10;
 lightAlpha			= 0.5;

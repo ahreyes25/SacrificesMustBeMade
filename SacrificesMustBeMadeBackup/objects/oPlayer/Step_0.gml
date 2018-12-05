@@ -130,6 +130,21 @@ if (!oGame.paused) {
 										alarm[9] = 150; // run for 5 seconds	
 									}
 								}
+								// Start Mashing
+								else {
+									if (alarm[3] == -1) {
+										alarm[3] = irandom_range(mashSpeedMin, mashSpeedMax);
+							
+										if (masher != noone) 
+											if (instance_exists(masher)) 
+												masher.kSacrifice = true;
+									}
+									else {
+										if (masher != noone)
+											if (instance_exists(masher))
+												masher.kSacrifice = false;	
+									}
+								}
 							}
 						}
 						// Mash Until no longer  mashing if sacrifice gets stolen
@@ -211,10 +226,14 @@ if (!oGame.paused) {
 			// Pickup Sacrifice
 			if (touching(oSacrifice)) {
 				if (carrying != noone) {
-					if (carrying.object_index == oCrate) {
-						kUp = true;
-						kPickup = true;
+					if (instance_exists(carrying)) {
+						if (carrying.object_index == oCrate) {
+							kUp = true;
+							kPickup = true;
+						}
 					}
+					else 
+						carrying = noone;
 				}
 				else {
 					kPickup = true;
