@@ -26,7 +26,7 @@ if (room == asset_get_index("rmCharacter")) {
 			break;
 		
 		case in.CONTROLLER:
-			if (gamepad_is_connected(3))
+			if (gamepad_is_connected(0))
 				draw_sprite(sController, image_index, p1x, p1y);
 			else 
 				draw_sprite(sKeyboard, image_index, p1x, p1y);

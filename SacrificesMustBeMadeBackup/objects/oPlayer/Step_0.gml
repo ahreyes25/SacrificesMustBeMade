@@ -32,6 +32,7 @@ if (!oGame.paused) {
 
 	#region Computer Controlled
 	else {
+		
 		#region Not Running Away
 		if (!runaway) {
 			#region Set starting target
@@ -83,6 +84,9 @@ if (!oGame.paused) {
 					if (carrying.object_index == oSacrifice) {
 						kDown = true;
 						kPickup = true;	
+						kLeft = false;
+						kRight = false;
+						throwDown = true;
 					}
 					else if (carrying.object_index == oCrate) {
 						var nearestP = instance_nearest(x, y, oPlayer);
@@ -481,6 +485,17 @@ if (!oGame.paused) {
 			}
 		}
 		#endregion
+		
+		if (touching(oAltar) && carrying != noone) {
+			if (instance_exists(carrying)) {
+				if (carrying.object_index == oSacrifice && !runaway) {
+					kDown = true;
+					kLeft = false;
+					kRight = false;
+					kPickup = true;
+				}
+			}
+		}
 
 		// - - - - - - - - - - - - - - - - - - - - -
 		if (!inHitStun && !mashing && !finishing)

@@ -2,7 +2,7 @@ if (room == asset_get_index("rmCharacter")) {
 	menu_input();
 
 	#region Turn Off CPU
-	if (p1in == in.READY && !gamepad_is_connected(0) && !gamepad_is_connected(1) && !gamepad_is_connected(2)) {
+	if (p1in == in.READY && !gamepad_is_connected(1) && !gamepad_is_connected(2) && !gamepad_is_connected(3)) {
 		drawArrow = true;
 	
 		if (kRight1) {
@@ -362,3 +362,53 @@ if (room == asset_get_index("rmCharacter")) {
 
 counter += 0.01;
 counter2 += 0.5;
+
+if (p1in == in.OFF || p1in == in.CPU) {
+	if (gamepad_is_connected(0)) {
+		p1in = in.CONTROLLER;
+		p1comp = false;
+	}
+}
+if (p2in == in.OFF || p2in == in.CPU) {
+	if (gamepad_is_connected(1)) {
+		p2in = in.CONTROLLER;
+		p2comp = false;
+	}
+}
+if (p3in == in.OFF || p3in == in.CPU) {
+	if (gamepad_is_connected(2)) {
+		p3in = in.CONTROLLER;
+		p3comp = false;
+	}
+}
+if (p4in == in.OFF || p4in == in.CPU) {
+	if (gamepad_is_connected(3)) {
+		p4in = in.CONTROLLER;
+		p4comp = false;
+	}
+}
+
+if (p1in == in.CONTROLLER || p1in == in.SELECT || p1in == in.READY) {
+	if (!gamepad_is_connected(0)) {
+		p1in = in.CPU;
+		p1comp = true;
+	}
+}
+if (p2in == in.CONTROLLER || p2in == in.SELECT || p2in == in.READY) {
+	if (!gamepad_is_connected(1)) {
+		p2in = in.CPU;
+		p2comp = true;
+	}
+}
+if (p3in == in.CONTROLLER || p3in == in.SELECT || p3in == in.READY) {
+	if (!gamepad_is_connected(2)) {
+		p3in = in.CPU;
+		p3comp = true;
+	}
+}
+if (p4in == in.CONTROLLER || p4in == in.SELECT || p4in == in.READY) {
+	if (!gamepad_is_connected(3)) {
+		p4in = in.CPU;
+		p4comp = true;
+	}
+}
