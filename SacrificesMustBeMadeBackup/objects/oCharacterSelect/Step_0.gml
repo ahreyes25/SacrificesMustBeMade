@@ -45,6 +45,7 @@ if (room == asset_get_index("rmCharacter")) {
 					else if (p2in == in.OFF) {
 						p2in = in.CPU;
 						audio_play_sound(sfxHit2, 0, 0);
+						p2comp = true;
 					}
 					break;
 			
@@ -58,6 +59,7 @@ if (room == asset_get_index("rmCharacter")) {
 					else if (p3in == in.OFF) {
 						p3in = in.CPU;
 						audio_play_sound(sfxHit2, 0, 0);
+						p3comp = true;
 					}
 					break;
 				
@@ -71,6 +73,7 @@ if (room == asset_get_index("rmCharacter")) {
 					else if (p4in == in.OFF) {
 						p4in = in.CPU;
 						audio_play_sound(sfxHit2, 0, 0);
+						p4comp = true;
 					}
 					break;
 			}
@@ -388,12 +391,14 @@ if (p4in == in.OFF || p4in == in.CPU) {
 	}
 }
 
+/*
 if (p1in == in.CONTROLLER || p1in == in.SELECT || p1in == in.READY) {
 	if (!gamepad_is_connected(0)) {
 		p1in = in.CPU;
 		p1comp = true;
 	}
 }
+*/
 if (p2in == in.CONTROLLER || p2in == in.SELECT || p2in == in.READY) {
 	if (!gamepad_is_connected(1)) {
 		p2in = in.CPU;
@@ -411,4 +416,8 @@ if (p4in == in.CONTROLLER || p4in == in.SELECT || p4in == in.READY) {
 		p4in = in.CPU;
 		p4comp = true;
 	}
+}
+
+if (p1in == in.CPU) {
+	p1comp = true;	
 }
